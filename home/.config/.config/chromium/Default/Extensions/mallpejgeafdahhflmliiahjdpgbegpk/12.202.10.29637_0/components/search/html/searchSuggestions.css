@@ -1,0 +1,59 @@
+
+body {
+    font-family: Tahoma, Geneva, sans-serif;
+    margin: 0;
+    font-size: 12px;
+}
+
+#container {
+    padding: 6px 0;
+}
+
+#divider {
+    border-top: 1px solid #F3F3F3;
+    width: 90%;
+    margin: 2px auto;
+}
+
+.suggHead {
+    font-weight: normal;
+    font-size: 10px;
+    float: right;
+    margin: 2px 22px 2px;
+    text-align: right;
+    color: #CCC;
+    cursor: default;
+}
+
+.suggItem, .highlightedItem {
+    margin: 0 1px;
+}
+
+.suggItem a, .highlightedItem a {
+    color: #000;
+    display: block;
+    padding: 2px 0;
+    text-indent: 23px;
+    text-decoration: none;
+    cursor: default;
+}
+
+.highlightedItem a {
+    color: white;
+    background-color: #0A246A;
+}
+
+/*
+.suggItem a:hover {
+    color: white;
+    background-color: #0A246A;
+}
+*/
+
+.suggQuery {
+    font-weight: bold;
+}
+
+.hidden {
+    display: none !important;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- saved from url=(0052)http://www.mywebface.com/menus/widgets/radio-widget/ -->
+	<title>Radio Widget</title>
+    <!-- Platform-specific API implementation -->
+    <script type="text/javascript" src="../../widget-context-1.0.js"></script>
+    <!-- Optional file for platform-specific customization -->
+    <script type="text/javascript" src="../../custom/radio-custom.js"></script>
+    <!-- Shared Radio widget includes -->
+ 	<script type="text/javascript" src="../common/eventListening.js"></script>
+    <script type="text/javascript" src="../common/set.js"></script>
+    <script type="text/javascript" src="js/radio-custom.js"></script>
+    <script type="text/javascript" src="js/radio-parser.js"></script>
+    <script type="text/javascript" src="js/radio-widget.js"></script>
+    <script type="text/javascript" src="js/radio-widget-ui.js"></script>
+    <link rel="stylesheet" href="css/radio-widget.css"/>
+</head>
+<body>
+    <div id="header">
+        <div id="tabs">
+            <div class="tab">
+                <a class="label" rel="featured" id="featured-tab">Featured</a>
+            </div>
+            <div class="tab">
+                <a class="label" rel="local" id="local-tab">Local</a>
+            </div>
+            <div class="tab">
+                <a class="label" rel="locations" id="locations-tab">Locations</a>
+            </div>
+            <div class="tab">
+                <a class="label" rel="music" id="music-tab">Music</a>
+            </div>
+            <div class="tab">
+                <a class="label" rel="talk" id="talk-tab">Talk</a>
+            </div>
+            <div class="tab">
+                <a class="label" rel="sports" id="sports-tab">Sports</a>
+            </div>
+        </div>
+        <div id="toolbar" class="hidden">
+            <a id="back">&nbsp;</a>
+            <div id="toolbar-icon" class="hidden"></div>
+            <div id="breadcrumb">
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+        <div id="spinner" class="hidden">
+            <div class="wrapper1">
+                <div class="wrapper2">
+                    <img src="http://www.mywebface.com/menus/widgets/radio-widget/images/modern/tb_rr_hourglass2.gif" alt=""/>
+                    Loading...
+                </div>
+            </div>
+        </div>
+        <div id="error" class="hidden">
+            We were unable to load your radio stations. <a id="retry" href="#">Retry</a>
+        </div>
+        <div id="items" class="hidden"></div>
+    </div>
+
+    <div id="footer">
+        <form id="search-form">
+            <div id="search-panel">
+                <img id="search-logo" alt="" src="http://www.mywebface.com/menus/widgets/radio-widget/images/modern/w_rr_search.png"/>
+                <input id="search-box" type="text"/><input id="search-button" type="submit" value=""/>
+            </div>
+        </form>
+        <div id="footer-tools">
+            <a id="favorites-action">&nbsp;</a>
+            <img id="tune-in-logo" alt="" src="http://www.mywebface.com/menus/widgets/radio-widget/images/modern/w_rr_tunein4.png"/>
+        </div>
+    </div>
+</body>
+</html>

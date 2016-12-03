@@ -1,0 +1,204 @@
+{
+   "_DO_NOT_EDIT": {
+      "description": "This file is auto generated with po2chrome-messages tool from nl.po.",
+      "message": ""
+   },
+   "close": {
+      "message": "Sluiten"
+   },
+   "connecting_host_app": {
+      "description": "Shown to user when Web extension sent request to native host messaging application and waiting for result.",
+      "message": "Verbinding maken met platform-eigen host-toepassing…"
+   },
+   "error_extension_response": {
+      "description": "Shown to user when response of extension API call does not follow known format.",
+      "message": "Verkeerde extensie-respons ontvangen"
+   },
+   "extension_enabled": {
+      "description": "Used as title, eg in table header. Means 'Does GNOME Shell extension enabled?'",
+      "message": "Ingeschakeld"
+   },
+   "extension_installed": {
+      "description": "Used as title, eg in table header. Means 'Does GNOME Shell extension installed?'",
+      "message": "Geïnstalleerd"
+   },
+   "extension_name": {
+      "description": "Used as title, eg in table header. Means 'GNOME Shell extension name'.",
+      "message": "Extensie"
+   },
+   "extension_status_downgrade": {
+      "description": "This is a part of phrase like 'Extension Top Icons must be downgraded'.",
+      "message": "moet naar een lagere versie worden gebracht"
+   },
+   "extension_status_upgrade": {
+      "description": "This is a part of phrase like 'Extension Top Icons can be upgraded'.",
+      "message": "kan worden opgewaardeerd"
+   },
+   "extension_synchronized": {
+      "description": "Used as title, eg in table header. Means 'Does GNOME Shell extension status synchronized with remote browser storage?'",
+      "message": "Gesynchroniseerd"
+   },
+   "gs_chrome": {
+      "description": "This is a project title. Used as extension name in Chrome Store and in some titlebars.",
+      "message": "Gnome-shell integratie"
+   },
+   "hours": {
+      "description": "This is a part of phrase 'Update check period: xx hours'",
+      "message": "uur"
+   },
+   "manifest_description": {
+      "description": "Used as extension description in Chrome Store",
+      "message": "Deze extensie voorziet in de integratie met Gnome-shell en de bijbehorende bron met extensies https://extensions.gnome.org"
+   },
+   "native_request_failed": {
+      "description": "$REQUEST$ is a placeholder for technical name of request that web extension make via native messaging host application.",
+      "message": "«$REQUEST$» platform-eigen verzoek is mislukt",
+      "placeholders": {
+         "request": {
+            "content": "$1"
+         }
+      }
+   },
+   "network_error": {
+      "message": "Er is een netwerkfout opgetreden. Controleer uw Internetverbinding en/of proxy-instellingen."
+   },
+   "never": {
+      "description": "This is a part of phrase 'Last check: never'",
+      "message": "nooit"
+   },
+   "no": {
+      "message": "Nee"
+   },
+   "no_host_connector": {
+      "message": "Alhoewel de extensie Gnome-shell integratie draait, wordt de platform-eigen hostconnector niet gedetecteerd. Ga naar \u003Ca href='https://wiki.gnome.org/Projects/GnomeShellIntegrationForChrome/Installation'>documentatie\u003C/a> voor instructies met betrekking tot het installeren van de connector."
+   },
+   "no_host_response": {
+      "description": "Means 'Web extension does not received answer from native messaging host application.'",
+      "message": "Geen respons van host"
+   },
+   "older_connector": {
+      "description": "Part of phrase eg 'You are using different versions of GNOME Shell integration extension (version 5) and native host connector (older than version 4)'.",
+      "message": "ouder dan versie 4"
+   },
+   "options_check_period": {
+      "description": "Option name. Allow to set interval between GNOME Shell extensions update checks.",
+      "message": "Periode tussen de controles op updates"
+   },
+   "options_last_check": {
+      "description": "This is a start of phrase (followed by date/time) of last GNOME Shell extensions update check.",
+      "message": "Laatste controle"
+   },
+   "options_link": {
+      "description": "Link name for options tab.",
+      "message": "Opties"
+   },
+   "options_next_check": {
+      "description": "This is a start of phrase (followed by date/time) of next GNOME Shell extensions update check.",
+      "message": "Volgende controle"
+   },
+   "options_saved": {
+      "description": "Means 'Options were saved successfully after user clicked Save button'",
+      "message": "Opties opgeslagen."
+   },
+   "options_show_network_errors": {
+      "description": "Option name. By default Chrome do not reveal exact network error in case of request failure. Allow enable/disable extended error information.",
+      "message": "Informatie tonen over netwerkfouten"
+   },
+   "options_show_network_errors_notice": {
+      "description": "This is a notice under option name. Warns user that additional browser permission is required if option will be enabled.",
+      "message": "Chrome toestemming «webRequest» vereist."
+   },
+   "options_show_release_notes": {
+      "description": "Option name. Allow to enable/disable popup with release notes when Web extension is updated.",
+      "message": "Uitgavenotities tonen wanneer extensie wordt bijgewerkt"
+   },
+   "options_synchronize_extensions": {
+      "description": "Option name. Allow to enable/disable synchronization of GNOME Shell extensions with remote browser storage.",
+      "message": "Lijst met extensies synchroniseren"
+   },
+   "options_synchronize_extensions_notice": {
+      "description": "This is a notice under option name.",
+      "message": "Indien ingeschakeld, zal uw lijst met Gnome Shell-extensies gesynchroniseerd worden met uw Google-account."
+   },
+   "options_title": {
+      "description": "$GS_CHROME$ is placeholder for 'GNOME Shell integration' string. This string used as title for Options page. This title is not shown in Chrome, but may be shown in other browsers.",
+      "message": "$GS_CHROME$ opties",
+      "placeholders": {
+         "gs_chrome": {
+            "content": "$1"
+         }
+      }
+   },
+   "options_update_check": {
+      "description": "Option name. Allow enable/disable update check for GNOME Shell extensions.",
+      "message": "Controleren op extensies-update"
+   },
+   "platform_not_supported": {
+      "message": "Platform-eigen hostconnector wordt niet ondersteund voor uw platform."
+   },
+   "retry": {
+      "message": "Opnieuw proberen"
+   },
+   "save": {
+      "message": "Opslaan"
+   },
+   "synchronization": {
+      "description": "Link name for synchronization tab in options dialog.",
+      "message": "Synchronisatie"
+   },
+   "synchronization_cancel": {
+      "message": "Synchronisatie niet inschakelen."
+   },
+   "synchronization_failed": {
+      "description": "$CAUSE$ is placeholder for error that caused synchronization failure.",
+      "message": "Synchroniseren van extensies mislukt: $CAUSE$",
+      "placeholders": {
+         "cause": {
+            "content": "$1"
+         }
+      }
+   },
+   "synchronization_storage_exists": {
+      "message": "Uw externe synchronisatie-opslag bevat reeds een lijst met extensies."
+   },
+   "synchronization_use_local": {
+      "message": "Lokale lijst met extensies gebruiken, die op afstand overschrijven."
+   },
+   "synchronization_use_remote": {
+      "message": "Externe lijst met extensies gebruiken, de lokale lijst overschrijven."
+   },
+   "translation_credits": {
+      "description": "This is content of 'About translation' tab in Options dialog. Thank you for translation and feel free to add yourself here. HTML markup enabled for this string.",
+      "message": "Bijdragen aan vertaling"
+   },
+   "translation_credits_title": {
+      "description": "Link name for translation credits tab in options dialog.",
+      "message": "Info vertaling"
+   },
+   "unknown_error": {
+      "description": "This should newer be shown to user. However better safe than sorry.",
+      "message": "Onbekende fout"
+   },
+   "update_available": {
+      "message": "Er is een update voor Gnome-shell extensies beschikbaar"
+   },
+   "update_check_failed": {
+      "description": "$CAUSE$ is placeholder for error that caused update failure.",
+      "message": "Controleren op extensies-update mislukt: $CAUSE$",
+      "placeholders": {
+         "cause": {
+            "content": "$1"
+         }
+      }
+   },
+   "version": {
+      "description": "Part of phrase eg 'GNOME Shell integration extension (version 5)'",
+      "message": "versie $$1"
+   },
+   "warning_versions_mismatch": {
+      "message": "U gebruikt verschillende versies van Gnome-shell integratie-extensie ($$1) en platform-eigen hostconnector ($$2). Sommige functies werken mogelijk niet of verkeerd."
+   },
+   "yes": {
+      "message": "Ja"
+   }
+}

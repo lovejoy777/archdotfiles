@@ -1,0 +1,456 @@
+body {
+    background-repeat: no-repeat;
+    width: 698px;
+    height: 335px;
+    overflow: hidden;
+    margin: 10px 0px 0px 0px;
+}
+
+.hidden {
+    display: none;
+}
+
+.message {
+    position: relative;
+    width: 70%;
+    margin: 90px auto 0 auto;
+}
+
+.message .body {
+    margin-left: 52px;
+}
+
+.message .text {
+    font-family: tahoma, sans-serif;
+    color: green;
+    font-weight: bold;
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.message .text strong {
+    text-decoration: underline;
+}
+
+.message .subtext {
+    font-family: tahoma, sans-serif;
+    font-size: 13px;
+    color: gray;
+    margin-top: 5px;
+}
+
+.message .icon {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+a {
+    font-family: tahoma, sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    color: #416304;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #416304;
+    cursor: pointer;
+}
+
+.mainContent {
+    width: 698px;
+    height: 320px;
+}
+
+.topbar {
+    width: 100%;
+    height: 20px;
+    padding-left: 11px;
+    padding-bottom: 7px;
+    border-bottom: 1px;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-style: solid;
+    border-color: #ce0b0b;
+}
+
+.logo {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: url('http://ak.imgfarm.com/images/toolbar/filmfan/reviews/icon_tomato.png') no-repeat;
+}
+
+.heading {
+    font: bold 15px Tahoma, sans-serif;
+    color: #ce0b0b
+}
+
+/*headings: tahoma bold 15pt #ce0b0b
+            -movie title: tahoma bold 12pt #416304 (underline on rollover)
+            -movie '%': tahoma 12pt #666666
+
+            -'pick' movie title: tahoma bold 14pt #416304 (underline on rollover)
+            -'pick' movie %: tahoma 14pt #666666
+            -'pick' description: tahoma 11pt #666666
+            -'pick' background: #f5f5f5
+            */
+.power {
+    font: normal 10px Tahoma, sans-serif;
+    color: #666666;
+    margin-top: 100px;
+    padding-top: 100px;
+    text-align: center;
+    width: 100%;
+}
+
+.power a {
+    font: normal 10px Tahoma, sans-serif;
+    color: #666666;
+    text-decoration: underline
+}
+
+.item {
+    width: 100%;
+    height: 27px;
+    text-align: left;
+    border: 0px dotted #ffffff;
+    border-bottom: 1px dotted #ce0b0b;
+    padding-top: 7px;
+    font-family: Tahoma, sans-serif;
+    font-size: 14px;
+    font-color: #333333;
+}
+
+.item:hover {
+    background: url('http://ak.imgfarm.com/images/toolbar/filmfan/tab_bg_red2.png');
+}
+
+.item a {
+    font-family: Tahoma, sans-serif;
+    font-size: 14px;
+    font-color: #333333;
+    font-weight: normal;
+}
+
+.itemTitle {
+    padding-top: 3px;
+}
+
+.sline {
+    color: #ce0b0b;
+    background: #ce0b0b;
+    height: 1px;
+    border-width: 0px;
+    border-style: solid;
+    border-color: #ce0b0b;
+}
+
+.floatLeft {
+    float: Left;
+}
+
+.floatRight {
+    float: Right;
+}
+
+.space {
+    width: 100%;
+    height: 15px;
+}
+
+.leftNav {
+    width: 162px;
+    height: 100%;
+    border: 0px dotted #ffffff;
+    border-right: 1px dotted #ce0b0b;
+}
+
+.rightNav {
+    width: 520px;
+    margin-left: 10px;
+    height: 90%;
+}
+
+.closeBtn {
+    width: 38px;
+    height: 19px;
+    margin-right: 5px;
+    background: url('http://ak.imgfarm.com/images/toolbar/filmfan/btn_close_red.png') no-repeat;
+}
+
+.closeBtn:hover {
+    background-position: 0 -20px;
+}
+
+.windowTitle {
+    width: 620px;
+    font-family: Tahoma, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ce0b0b;
+    margin-top: 0px;
+}
+
+.feedsContent {
+    width: 515px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 300px;
+}
+
+.feedLeftTitle {
+    width: 240px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    margin-left: 5px;
+    font: bold 15px tahoma, sans-serif;
+    color: #ce0b0b
+}
+
+.feedLeft {
+    width: 240px;
+    float: left;
+    height: 150px;
+    margin-top: 5px;
+}
+
+.feedRightTitle {
+    width: 250px;
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+    padding-bottom: 5px;
+    font: bold 15px tahoma, sans-serif;
+    color: #ce0b0b
+}
+
+.feedRight {
+    width: 245px;
+    float: right;
+    height: 150px;
+    margin-top: 5px;
+}
+
+.feedBottomTitle {
+    width: 440px;
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    font: bold 15px tahoma, sans-serif;
+    color: #ce0b0b
+}
+
+.feedBottom {
+/*margin-top: 170px;*/
+    width: 500px;
+    height: 75px;
+}
+
+.certFreshDiv {
+    background-color: #f5f5f5;
+    margin: 5px;
+    padding: 8px;
+    width: 510px;
+    height: 100px;
+    position: absolute;
+    top: 195px;
+}
+
+.feedBlockFr {
+/*width: 100%;*/
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-color: #416304;
+    text-decoration: none; /*padding:2px;*/
+}
+
+.feedBlock {
+    width: 235px;
+    font-family: Tahoma, sans-serif;
+    margin-bottom: 2px;
+    font-size: 12px;
+    font-weight: normal;
+    font-color: #416304;
+    text-decoration: none; /*padding:2px;*/
+}
+
+.feedTitle {
+    width: 235px;
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    color: #0066cc;
+    margin-left: 2px;
+    margin-top: 0px;
+    font-weight: bold;
+}
+
+.perCent {
+    color: #666666;
+    font-weight: normal;
+    width: 37px;
+    float: left
+}
+
+.feedTitleFr {
+    width: 380px;
+    font-family: Tahoma, sans-serif;
+    font-size: 13px;
+    color: #0066cc;
+    margin-left: 5px;
+    margin-top: -4px;
+    font-weight: bold;
+}
+
+.feedDesc {
+    width: 400px;
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    color: #333333;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+.feedDescFr {
+    width: 380px;
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    color: #333333;
+    margin-left: 5px;
+    margin-top: 4px;
+}
+
+.thumbnail {
+    border-width: 3px;
+    border-style: double;
+    border-color: #999999;
+    width: 75px;
+}
+
+.thumbnail:hover {
+    border-color: #ce0b0b;
+}
+
+.icon {
+    width: 22px;
+    height: 22px;
+    display: inline; /* Handles IE6 double margin bug. */
+    margin-left: 10px;
+    margin-top: 1px;
+}
+
+#movieIcon {
+    background: url('http://ak.imgfarm.com/images/toolbar/filmfan/icon_filmstrip.png') no-repeat;
+}
+
+#videoIcon {
+    background: url('http://ak.imgfarm.com/images/toolbar/filmfan/icon_dvd.png') no-repeat;
+}
+
+#topIcon {
+    background: url('http://ak.imgfarm.com/images/toolbar/btn2/global/icon_toprities.png') no-repeat;
+}
+
+#openIcon {
+    background: url('http://ak.imgfarm.com/images/toolbar/btn2/global/menu_icons_ew.png') no-repeat;
+}
+
+#frmovieIcon {
+    background: url('http://ak.imgfarm.com/images/toolbar/btn2/global/menu_icons_ew.png') no-repeat;
+}
+
+#newvidIcon {
+    background: url('http://ak.imgfarm.com/images/toolbar/btn2/global/menu_icons_ew.png') no-repeat;
+}
+
+#topdvdIcon {
+    background: url('http://ak.imgfarm.com/images/toolbar/btn2/global/menu_icons_ew.png') no-repeat;
+}
+
+#frvidIcon {
+    background: url('http://ak.imgfarm.com/images/toolbar/btn2/global/menu_icons_ew.png') no-repeat;
+}
+
+#a_movie {
+    text-decoration: none;
+    color: #000000;
+}
+
+#a_movie:hover {
+    text-decoration: none;
+}
+
+#a_video {
+    text-decoration: none;
+    color: #000000;
+}
+
+#a_video:hover {
+    text-decoration: none;
+}
+
+#a_top {
+    text-decoration: none;
+    color: #000000;
+}
+
+#a_top:hover {
+    text-decoration: none;
+}
+
+#a_frmovie {
+    text-decoration: none;
+    color: #000000;
+}
+
+#a_frmovie:hover {
+    text-decoration: none;
+}
+
+#a_newvid {
+    text-decoration: none;
+    color: #000000;
+}
+
+#a_newvid:hover {
+    text-decoration: none;
+}
+
+#a_open {
+    text-decoration: none;
+    color: #000000;
+}
+
+#a_open:hover {
+    text-decoration: none;
+}
+
+#a_topdvd {
+    text-decoration: none;
+    color: #000000;
+}
+
+#a_topdvd:hover {
+    text-decoration: none;
+}
+
+#a_frvid {
+    text-decoration: none;
+    color: #000000;
+}
+
+#a_frvid:hover {
+    text-decoration: none;
+}
+
+.tomatoRate {
+    width: 16px;
+}

@@ -1,0 +1,23 @@
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #1E1E1E, #1CAF56, #1B836F
+rofi.color-normal: #1E1E1E, #c1c1c1, #1E1E1E, #394249, #1CAF56
+rofi.color-active: #1E1E1E, #1CAF56, #1E1E1E, #368DB9, #1CAF56
+rofi.color-urgent: #1E1E1E, #1B836F, #1E1E1E, #394249, #1CAF56
+
+rofi.lines: 10
+rofi.separator-style: solid
+rofi.terminal: xfce4-terminal
+rofi.hide-scrollbar: true
+rofi.bw: 0
+rofi.columns: 1
+rofi.padding: 20
+rofi.width: 25
+rofi.location: 1
+rofi.font: Cantarell 12
+
+rofi.opacity: 95
+!rofi.yoffset: 0
+!rofi.fake-transparency: false

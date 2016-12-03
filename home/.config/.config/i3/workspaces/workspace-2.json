@@ -1,0 +1,12 @@
+// vim:ts=4:sw=4:et
+
+
+ 					              {
+					                "border": "normal", 
+					                "floating": "auto_off",
+					                "type": "con", 
+ 					                //"percent": 0.5,
+ 					                "name": "browser",
+ 					                "swallows": [{"class": "^Chromium$", "instance": "^chromium$"}]
+				                 }
+				                 

@@ -1,0 +1,42 @@
+<?xml encoding="UTF-8" version="1.0"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<unique-id>1478477157942876-1</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description>Example for a custom action</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>alacarte</icon>
+	<name>Edit as Root</name>
+	<unique-id>1480374305196754-7</unique-id>
+	<command>gksu gedit %f</command>
+	<description>rootfile</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>folder-open</icon>
+	<name>Open as Root</name>
+	<unique-id>1480372462799047-3</unique-id>
+	<command>gksu thunar %f</command>
+	<description>open folder as root</description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+</actions>

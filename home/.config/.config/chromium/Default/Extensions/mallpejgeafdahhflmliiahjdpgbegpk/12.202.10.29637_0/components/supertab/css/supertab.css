@@ -1,0 +1,368 @@
+body {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    background-color: #FFF;
+    display: none;
+}
+
+.search-logo {
+    margin: 0 auto;
+    padding-bottom: 63px;
+    width: 112px;
+    display: block;
+}
+
+#container {
+    margin: auto;
+    padding: 30px 2px 60px 2px;
+    width: 80%;
+    min-width: 550px;
+    max-width: 850px;
+    z-index: 4;
+    min-height: 100%;
+}
+
+section[class*=toggle] header {
+	cursor: pointer;
+}
+
+.section {
+    margin-top: 50px;
+    padding: 0 4px;
+	clear: left;
+}
+
+/* Section header. */
+.collapsible .section-state-cue {
+    display: block;
+}
+
+.section-state-cue {
+    -webkit-transition: -webkit-transform .15s;
+    position: absolute;
+    top: -18px;
+    left: -15px;
+    margin-top: 50%;
+}
+
+.section:not(.collapsed) .section-state-cue {
+    -webkit-transform: rotate(90deg);
+}
+
+header {
+    position: relative;
+    cursor: default;
+}
+
+.collapsible header {
+    cursor: pointer;
+}
+
+header .strike-through {
+    border-bottom: 1px solid #EEE;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+header h2 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: normal !important;
+    font-size: 16px;
+    background-color: white;
+    display: inline-block;
+    padding-right: 7px;
+    margin: 0;
+    position: relative;
+}
+
+/* Search form fields. */
+#searchFields {
+    text-align: center;
+    position: relative;
+    height: 60px;
+}
+
+#flower {
+    position: absolute;
+    left: -60px;
+    top: -2px;
+}
+
+#searchfor {
+    height: 37px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    padding: 4px 7px;
+    border: 1px solid #666;
+}
+
+#searchfor {
+    position: absolute;
+    left: 0;
+    right: 100px;
+    top: 0;
+}
+
+#submitSearch {
+    cursor: pointer;
+    border: 0;
+    background: url(http://ak.imgfarm.com/images/toolbar/native/chrome/newtab/searchButtonGreenSquare.png) no-repeat;
+    width: 103px;
+    height: 48px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#submitSearch:hover {
+    background-position: 0 -48px;
+}
+
+#providerLogo {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#searchFields > * {
+    vertical-align: middle;
+}
+
+.suggest {
+    font-weight: normal;
+    text-align: left;
+}
+
+#sgbody {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: left;
+    background-color: white;
+    padding: 0;
+    border: 1px solid #ABAAAA;
+    border-top: none;
+    z-index: 16;
+    width: 448px;
+}
+
+/* Website list. */
+ul {
+    padding: 0;
+}
+
+ul li {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 7px 22px 0 0;
+    width: 92px;
+    white-space: nowrap;
+    position: relative;
+}
+
+ul li .thumbnail {
+    display: none;
+}
+
+ul .favicon {
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+}
+
+ul a {
+    text-decoration: none;
+}
+
+ul a label {
+    text-decoration: underline;
+    cursor: pointer;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    margin-left: 18px;
+}
+
+.expanded.section ul li .thumbnail {
+    display: block;
+    margin: auto;
+    border: 4px solid #999;
+}
+
+/* Footer. */
+footer {
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    min-width: 600px;
+}
+
+footer .links {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 20px;
+}
+
+.links a {
+    color: rgb(0, 0, 238);
+}
+
+.logo {
+    margin: 10px 20px;
+    background-color: transparent;
+    display: inline-block;
+}
+
+.mws .logo {
+    width: 228px;
+    height: 30px;
+    background-image: url(http://ak.imgfarm.com/images/search/mws_logo_tab.png);
+    margin: 10px 20px;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px 20px;
+}
+
+/* Other. */
+.hidden {
+    display: none !important;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+.app {
+	background-size: 96px 96px;
+	background-position: 50% 5px;
+	background-repeat: no-repeat;
+	color: #000;
+	display: block;
+	height: 15px;
+	width: 90px;
+	margin: 12px 12px 0;
+	padding: 105px 15px 10px;
+	float: left;
+	font-size: 14px;
+	text-align: center;
+	text-decoration: none;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.app:hover {
+	-webkit-transition: background-color .5s;
+	background-color: rgba(229,229,229,1);
+	border-radius: 10px;
+}
+
+.app:visited {
+	color: #000;
+}
+
+.collapsed .app {
+	background-size: 16px 16px;
+	background-position: 0 0;
+	padding: 1px 0 0 20px;
+	width: auto;
+	max-width: 114px;
+	font-size: 12px;
+	margin: 20px 20px 0 0;
+	text-align: left;
+}
+
+.collapsed .app:hover {
+	background-color: #fff;
+	border-radius: 0;
+}
+
+menu {
+	display: none;
+	position: fixed;
+	border: 1px solid rgba(0, 0, 0, .50);
+	-webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, .50);
+	color: black;
+	background: -webkit-linear-gradient(#fff, #eee);
+	left: 0;
+	white-space: nowrap;
+	padding: 8px 0;
+	margin: 0;
+	cursor: default;
+	border-radius: 3px;
+	z-index: 3;
+}
+
+menu .launch {
+	font-weight: bold;
+}
+
+menu > * {
+	box-sizing: border-box;
+	display: block;
+	margin: 0;
+	width: 100%;
+	text-align: start;
+}
+
+menu > :not(hr) {
+	-webkit-appearance: none;
+	background: transparent;
+	font: inherit;
+	border: 0;
+	line-height: 18px;
+	padding: 0 19px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+menu > hr {
+	background: -webkit-linear-gradient(left,
+										rgba(0, 0, 0, .10),
+										rgba(0, 0, 0, .02) 96%);
+	border: 0;
+	height: 1px;
+	margin: 8px 0;
+}
+
+menu > [disabled] {
+	color: rgba(0, 0, 0, .3);
+}
+
+menu > [hidden] {
+	display: none;
+}
+
+menu > :not(hr)[selected] {
+	background-color: #dce5fa;
+}
+
+menu > :not(hr)[selected]:active {
+	background-color: #426dc9;
+	color: #fff;
+}
+
+.ask #providerLogo {
+    display: block;
+    right: -62px;
+}

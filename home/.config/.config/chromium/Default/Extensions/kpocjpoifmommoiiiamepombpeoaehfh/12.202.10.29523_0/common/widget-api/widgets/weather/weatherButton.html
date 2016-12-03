@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="css/weatherButton.css"/>
+	<script type="text/javascript" src="../common/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="../common/underscore-1.3.1.min.js"></script>
+    <script type="text/javascript" src="../../widget-context-1.0.js"></script>
+    <script type="text/javascript" src="../common/common.js"></script>
+    <script type="text/javascript" src="js/weather.js"></script>
+</head>
+<body>
+<div class="topbar">
+    <div class="logo floatLeft"></div>
+    <div class="windowTitle floatLeft">Weather</div>
+    <div class="closeBtn floatLeft" id="close"></div>
+</div>
+<div id="mainContent" class="mainContent">
+    <div id="current_condition" class="currentblock floatLeft"></div>
+    <div class="space_1 floatLeft"></div>
+    <div id="forcast_condition_0" class="block floatLeft"></div>
+    <div class="space_2 floatLeft"></div>
+    <div id="forcast_condition_1" class="block floatLeft"></div>
+    <div class="space_2 floatLeft"></div>
+    <div id="forcast_condition_2" class="block floatLeft"></div>
+    <div class="space_2 floatLeft"></div>
+    <div id="forcast_condition_3" class="block floatLeft"></div>
+
+</div>
+<div class="bottombar">
+	<a href="#" class="navigateToLocationDetails" id='currentLocation'></a> |
+    <span class="navigateToLocationDetails">&nbsp<a id="locationDetailsBtn" href="#">Details</a> |</span>
+    <span class="openSettingsWindow">&nbsp<a id="changeLocationBtn" href="#">Change</a></span>
+</div>
+<div id="attribution">
+    Source: <a class="navigateToProviderHP">Weather Underground</a>
+</div>
+
+<!-- Settings div -->
+<div id="locationSettings">
+
+</div>
+<div id="settingsMainContent">
+
+    <div style="margin-left:9px;width:280px;">
+        <div style="margin-top:10px;height:20px;">
+            <div class="mainTitle floatLeft">Change Location:</div>
+            <div id="closeSettingsWindow" class="closeBtn floatLeft"></div>
+        </div>
+        <hr class="sline"/>
+        <div class="floatLeft" style="height:35px;">
+            <div class="subTitle floatLeft" style="margin-top:2px;">Degrees:</div>
+            <div class="radioBtn floatLeft">
+                <label><input type="radio" id="unitgroup_f" name="unitgroup" value="0" checked/>Fahrenheit</label>
+                <label><input type="radio" id="unitgroup_c" name="unitgroup" value="1"/>Celsius</label>
+            </div>
+        </div>
+        <br>
+
+        <div class="subTitle floatLeft " style="width:100%;">Find a new location:</div>
+        <br>
+
+        <div class="subTitle floatLeft">
+            <input type="text" id="location" value="" class="floatLeft"
+                   style="margin-left:56px;width:150px;" placeholder="City Or Zip" />
+            <input type="button" value=" " id="searchBtn" class="floatLeft" />
+        </div>
+        <div id="searchStatus" class="floatLeft"></div>
+        <br>
+
+        <div class="inputBtns floatLeft">
+            <input type="button" id="saveBtn" value=" " />
+            <input type="button" id="cancelBtn" value=" " />
+        </div>
+    </div>
+</div>
+</body>
+</html>

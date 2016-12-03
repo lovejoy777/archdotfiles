@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <!-- saved from url=(0050)http://www.mywebface.com/menus/widgets/rss-widget/ -->
+    <!-- Platform-specific API implementation -->
+    <script type="text/javascript" src="../../widget-context-1.0.js"></script>
+    <!-- Optional file for platform-specific customization -->
+    <script type="text/javascript" src="../../custom/test-custom.js"></script>
+    <!-- Shared Test widget includes -->
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="qunit.js"></script>
+    <script type="text/javascript" src="testWidget.js"></script>
+    <link rel="stylesheet" href="qunit.css" type="text/css" media="screen" />
+    <style type="text/css">
+        body {
+            font-family: sans-serif;
+        }
+        span.link {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body onload="onload()">
+    <b>Widget developers:</b> View source of this widget to see example usage of all API calls.<br/>
+    <b>API implementors:</b> This widget runs a suite of automated tests that can be used to verify compliance of new API implementations.<br/>
+    Note: The following tests cannot be automated and should be executed manually:<br/>
+    <span class="link" onclick="testNavigate('currentTab')">Navigate (current tab)</span> |
+    <span class="link" onclick="testNavigate('newTab')">Navigate (new tab)</span> |
+    <span class="link" onclick="testNavigate('newWindow')">Navigate (new widow)</span> |
+    <span class="link" onclick="testClose()">Close Popup</span> |
+    <span class="link" onclick="testResize()">Resize</span> |
+    <span class="link" onclick="testHandleError()">Handle Error</span>
+    <div style="height: 8px"></div>
+    The results of the automated tests should appear below.
+    <div style="height: 8px"></div>
+
+    <h1 id="qunit-header">Test Widget</h1>
+    <h2 id="qunit-banner"></h2>
+    <div id="qunit-testrunner-toolbar"></div>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <div id="qunit-fixture">test markup, will be hidden</div>
+</body>
+</html>

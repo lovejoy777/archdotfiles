@@ -1,0 +1,76 @@
+This document will capture a way to integrate the Mindspark_Global family of shared classes into a build.
+
+Notes about the new classes:
+- MindsparkGlobal.js: must precede all of the following
+- activePing.js: active ping service
+- buttonLogger.js: button structure and click logger
+- console.js: publishes window.console as MindsparkGlobal named 'console'
+- FFPreferencesPersister.js: implements simple persister service for Firefox
+- LocalStoragePersister.js: implements simple persister service using LocalStorage
+- httpTransport.js: implements simple http transport service
+- testHttpTransport.js: implements simple http transport server which logs to console instead of sending url
+- HttpURL.js: classes for HttpURL and HttpQueryString
+- searchSuggestLocale.js: service for localized search suggest
+
+
+For Firefox:
+
+- In core.js, just after the universalConsole.setConsole, add the following:
+     if (window.Mindspark_Global) {
+         Mindspark_Global.setValue('console', Mindspark_console);
+     }
+
+- In core.js, somewhere in the Mindspark_ collection of properties (like just before onEveryRunExceptFirst) add:
+    setupGlobals: function() {
+        Mindspark_Global.setErrorRecorder(function(err) {
+            Mindspark_.error('c: Mindspark_Global caught: %s, stack: %s', err.message, err.stack);
+        });
+        Mindspark_Global.setValue('underscore', Mindspark_.underscore);
+        Mindspark_Global.setValue('toolbarData', this.installation);
+        Mindspark_Global.setValue('installationInfo', {});
+        Mindspark_Global.setValue('toolbarName', 'Mindspark_');
+        Mindspark_Global.setValue('UL.eventURL', Mindspark_.common.unifiedLoggingPixelUrl);
+
+        Mindspark_Global.setValue('activePingConfig',
+            (function(){
+                var SEC = 1000,
+                    MIN = 60*SEC,
+                    HR = 60*MIN,
+                    toolbarConfig = window.Mindspark_config,
+                    appParams = {
+                        anxv: toolbarConfig.version,
+                        anxd: toolbarConfig.buildDate
+                    },
+                    apConfig = {
+                        successInterval: 1*MIN,
+                        failInterval: 5*SEC,
+                        appParams: appParams
+                    };
+
+                    Mindspark_.underscore.extend(appParams, {
+                        f: '00500000',
+                        homePageEnabled: Mindspark_.browser.isHomePageEnabled(),
+                        tabEnabled: Mindspark_.options.isTabEnabled(),
+                        keywordEnabled: Mindspark_.options.isKeywordEnabled(),
+                        defaultSearch: Mindspark_.browser.isDefaultSearch(),
+                        buttonIds: JSON.stringify(Mindspark_.getButtonIds()),
+                        coId: Mindspark_.installation.coId || '',
+                        userSegment: Mindspark_.installation.userSegment || ''
+                    });
+
+                Mindspark_.log('c: apConfig: %O', apConfig);
+                return apConfig;
+            })()
+        );
+    },
+
+- In core.js, within onEveryRun just after the initObservers call, add:
+            self.setupGlobals();
+
+- In toolbar.xul, you will need to add the following scripts:
+    <script type="application/x-javascript" src="chrome://Mindspark_/content/shared/MindsparkGlobal.js" />
+    <script type="application/x-javascript" src="chrome://Mindspark_/content/shared/unifiedLogger.js" />
+    <script type="application/x-javascript" src="chrome://Mindspark_/content/shared/httpTransport.js" />
+    <script type="application/x-javascript" src="chrome://Mindspark_/content/shared/FFPreferencesPersister.js" />
+    <script type="application/x-javascript" src="chrome://Mindspark_/content/shared/activePing.js" />
+

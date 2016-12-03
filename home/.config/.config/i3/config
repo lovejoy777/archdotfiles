@@ -1,0 +1,360 @@
+##############################################
+# LOVEJOYS ARCH LINUX WITH I3 WM CONFIG FILE #
+##############################################
+
+##################
+# CUSTOM MOD KEY #
+##################
+
+set $mod Mod4
+
+###########################
+# CUSTOM FONT FOR WINDOWS #
+###########################
+
+font pango:Cantarell 10
+
+########################
+# DEFAULT KEY BINDINGS #
+########################
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+#bindsym $mod+d exec dmenu_run
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+#######################
+# CUSTOM KEY BINDINGS #
+#######################
+
+# start Terminal Emulator
+bindsym $mod+Return exec xfce4-terminal
+
+# start Textlines Applet
+#bindsym $mod+Shift+t exec /home/steve/.config/i3/scripts/textlines -p rofi
+
+# Screen Shot
+bindsym --release Print exec scrot -s -e 'mv $f ~/Pictures/screenshots/.'
+
+# start Rofi Menu
+bindsym $mod+d exec rofi -show run
+
+# start Xfce4 App Finder
+bindsym Ctrl+1 exec --no-startup-id xfce4-appfinder
+
+# start Browser
+bindsym Ctrl+2 exec chromium
+
+# start File Manager
+bindsym Ctrl+3 exec Thunar
+
+# start Email
+bindsym Ctrl+4 exec geary
+
+# start Image Manipulator
+bindsym Ctrl+5 exec gimp
+
+# start Video Player
+bindsym Ctrl+6 exec --no-startup-id mirage
+
+# start Images Viewer
+bindsym Ctrl+7 exec --no-startup-id gthumb
+
+# start Android IDE
+bindsym Ctrl+8 exec --no-startup-id jetbrains-studio
+
+# start Arduino IDE
+bindsym Ctrl+9 exec atom
+
+# start Vim Editor
+bindsym Ctrl+0 exec xfce4-terminal -e vim
+
+# start Power Menu
+bindsym $mod+Shift+p exec /home/steve/.config/i3/scripts/shutdown_menu -c
+
+# start Lockscreen
+bindsym $mod+Shift+x exec /home/steve/.config/i3/scripts/lock -t Password
+
+#################################
+# CUSTOM MEDIA & AUDIO BINDINGS #
+#################################
+
+# Volume controls
+
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
+#bindsym XF86AudioMute exec amixer -q set Master toggle
+
+# Media player controls
+
+bindsym XF86AudioPlay exec "playerctl play"
+bindsym XF86AudioPause exec "playerctl pause"
+bindsym XF86AudioNext exec "playerctl next"
+bindsym XF86AudioPrev exec "playerctl previous"
+
+#############################
+# CUSTOM STARTUP EXECUTIONS #
+#############################
+
+exec --no-startup-id compton -f
+exec --no-startup-id setxkbmap gb
+exec --no-startup-id nm-applet
+exec --no-startup-id volumeicon
+exec --no-startup-id blueman-applet
+exec --no-startup-id dunst -config /home/steve/.config/dunst/dunstrc
+exec --no-startup-id Thunar
+exec --no-startup-id dropbox start
+
+# Screen Lock
+
+exec --no-startup-id /usr/bin/xautolock -detectsleep -time 9 -locker "/home/steve/.config/i3/scripts/lock -t password" -notify 30 -notifier "notify-send -u critical -t 1000 'SCREEN OFF!!!' 'in 30 seconds'"
+
+##### Not Set ########
+
+#exec --no-startup-id xfsettingsd --sm-client-disable &
+#exec --no-startup-id xfce4-volumed &
+#exec --no-startup-id xfce4-panel &
+#exec --no-startup-id xfce4-power-manager &
+#exec --no-startup-id xfce4-notifyd
+#exec --no-startup-id xpad &
+#exec --no-startup-id xxkb &
+#exec --no-startup-id ~/.config/i3/bin/dpmsoff &
+#exec --no-startup-id xset dpms 900
+#exec --no-startup-id xset -b
+#exec --no-startup-id blueman-applet
+#exec --no-startup-id sudo NetworkManager
+#exec --no-startup-id gvim
+
+####################
+# FLOATING WINDOWS #
+####################
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+for_window [class="Lxappearance"] floating enable
+for_window [class="Gparted"] floating enable
+for_window [class="Gimp"] floating enable
+for_window [class="Xfce4-appfinder"] floating enable
+for_window [class="Gpick"] floating enable
+for_window [class="Geary"] floating enable
+for_window [title="alsamixer"] floating enable
+
+###### Not Set ########
+
+#for_window [title="^TerminalHtop$"] floating enable
+#for_window [class="^ThunarHome$"] floating enable
+#for_window [title="^File Operation Progress$"] floating enable
+#for_window [title="^Current Media Information$"] floating enable
+#for_window [class="^Xfrun4$"] floating enable
+#for_window [class="^cameraclient$"] floating enable
+#for_window [class="^blueman-manager$"] floating enable
+#for_window [class="^galculator$"] floating enable
+#for_window [class="^vlc$"] floating enable
+#for_window [class="^Yad$"] floating enable border normal
+#for_window [class="^gnuplot"] floating enable
+#for_window [class="^xpad"] floating enable
+
+
+#####################################
+# CUSTOM WORKSPACE VARIBLES & ICONS #
+#####################################
+
+# Unused Icons
+#  , , , 
+
+set $workspace1 "1 "
+set $workspace2 "2 "
+set $workspace3 "3 "
+set $workspace4 "4 "
+set $workspace5 "5 "
+set $workspace6 "6 "
+set $workspace7 "7 "
+set $workspace8 "8 "
+set $workspace9 "9 "
+set $workspace10 "10 "
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+# move focused container to workspace
+#bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+################################
+# PRESET WORKSPACES ON STARTUP #
+################################
+
+exec --no-startup-id /home/steve/.config/i3/workspaces/load_layout2.sh
+exec --no-startup-id /home/steve/.config/i3/workspaces/load_layout1.sh
+
+####################
+# CUSTOM WALLPAPER #
+####################
+
+exec_always --no-startup-id feh --bg-scale /home/steve/Pictures/wallpapers/archwallpaper4.png
+
+#######################
+# ASSIGNED WORKSPACES #
+#######################
+
+# assign workspace 3 to File Manager
+assign [class="Thunar"] $workspace3
+
+# assign workspace 4 to Email
+#assign [class="Geary"] $workspace4
+
+# assign workspace 6 to Video Player
+assign [class="Mirage"] $workspace6
+
+# assign workspace 7 to Image Viewer
+assign [class="Gthumb"] $workspace7
+
+# assign workspace 8 to Android IDE
+assign [class="jetbrains-studio"] $workspace8
+
+# assign workspace 9 to Arduino IDE
+assign [class="Atom"] $workspace9
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+####################
+# RESIZING WINDOWS #
+####################
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+#############################
+# CUSTOM I3BLOCKS STATUSBAR #
+#############################
+
+set $bg-color 	         #363C41
+set $inactive-bg-color   #363C41
+set $text-color          #1B836F
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #365741
+
+# window color
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          #1B836F
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color  #1B836F
+client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color  #1B836F
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #7DAF56
+
+# bar
+bar {
+	font pango:Cantarell 12
+    strip_workspace_numbers yes
+    status_command i3blocks -c /home/steve/.config/i3/i3blocks.conf 
+	colors {
+		background $bg-color
+	    	separator #757575
+		#                  border             background         text
+		focused_workspace  $bg-color          $bg-color          $text-color
+		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+
+	}
+}

@@ -1,0 +1,549 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+body {
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #000;
+    background-color: #FFF;
+    width: 100%;
+}
+
+#header {
+    width: 100%;
+    background-color: #FFF;
+}
+
+#toolbar {
+    background-color: #FFF;
+    color: #707071;
+    font-size: 10px;
+    white-space: nowrap;
+    width: 100%;
+    height: 30px;
+    clear: both;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#back {
+    float: left;
+    width: 21px;
+    height: 22px;
+    background-image: url('http://www.mywebface.com/menus/widgets/radio-widget/images/modern/tb_rr_nav1_back.png');
+    cursor: pointer;
+}
+
+#toolbar.at-root #back {
+    display: none;
+}
+
+#breadcrumb {
+    display: inline-block;
+    line-height: 20px;
+    margin-top: 1px;
+}
+
+.msie7 #breadcrumb {
+    display: inline;
+    zoom: 1;
+}
+
+#toolbar.at-root #breadcrumb {
+    margin-left: 10px;
+}
+
+#toolbar-icon {
+    display: inline-block;
+    vertical-align: top;
+    width: 8px;
+    height: 7px;
+    margin: 8px 0 0 10px;
+}
+
+#toolbar-icon.favorites {
+    background: transparent url('http://www.mywebface.com/menus/widgets/radio-widget/images/modern/w_rr_fav4.png') no-repeat 0 -21px;
+}
+
+.msie7 #toolbar-icon {
+    display: inline;
+    zoom: 1;
+}
+
+/* Content. */
+#content {
+    overflow-x: hidden;
+	overflow-y: auto;
+    position: absolute;
+    top: 54px;
+    left: 2px;
+    bottom: 37px;
+    right: 2px;
+    background-color: #11343F;
+}
+
+.toolbar-visible #content {
+    top: 84px;
+}
+
+/* Footer. */
+#footer {
+    height: 35px;
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+    background-color: #F0F0F0;
+}
+
+#search-panel {
+    padding-top: 6px;
+}
+
+#search-panel * {
+    float: left;
+}
+
+#search-logo {
+    margin: 2px;
+}
+
+#search-box {
+    line-height: 23px;
+    width: 131px;
+    height: 23px;
+    margin: 0;
+    padding: 0 3px;
+    border: 1px solid #000;
+}
+
+#search-box.empty {
+    color: #999;
+}
+
+#search-button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 29px;
+    height: 25px;
+    background: transparent url('http://www.mywebface.com/menus/widgets/radio-widget/images/modern/w_rr_btn_search.png') no-repeat 0 0;
+    position: relative;
+    left: -1px;
+}
+
+#search-button:hover {
+    background-position: 0 -25px;
+}
+
+#footer-tools {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    vertical-align: middle;
+}
+
+#favorites-action {
+    cursor: pointer;
+    vertical-align: top;
+    margin: 6px 10px 0 0;
+    text-decoration: none;
+    display: inline-block;
+    width: 18px;
+    height: 15px;
+    background: transparent url('http://www.mywebface.com/menus/widgets/radio-widget/images/modern/w_rr_presets.png') no-repeat 0 0;
+}
+
+.msie7 #favorites-action {
+    display: inline;
+    zoom: 1;
+}
+
+#favorites-action:hover {
+    background-position: 0 -16px;
+}
+
+#tune-in-logo {
+    border-left: 1px solid #999;
+    padding-left: 15px;
+}
+
+/* Items. */
+.item {
+    height: 21px;
+    color: #CAEDF8;
+    background-color: #11343F;
+    position: relative;
+    cursor: pointer;
+}
+
+.even.item {
+    background-color: #264954;
+}
+
+.item:hover {
+    background-color: #77F2FC;
+    color: #11343F;
+}
+
+/* Abridged items display no actions and no information. */
+.abridged .item .actions {
+    display: none !important;
+}
+
+.abridged .item .name {
+    margin-left: 0 !important;
+}
+
+.abridged .item:hover .options {
+    display: none !important;
+}
+
+.abridged .item .info {
+    display: none !important;
+}
+
+/* Item actions. */
+.item .actions {
+    border-right: 1px solid #4A6D78;
+    float: left;
+    width: 25px;
+    height: 21px;
+}
+
+/* Favorite action. */
+.item .favorite-action {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 17px;
+    margin: 2px 5px;
+}
+
+.item .favorite-action .heart {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 5px 4px;
+}
+
+.item .inactive.favorite-action .heart,
+.item .active.favorite-action .heart {
+    width: 8px;
+    height: 7px;
+    background: transparent url('http://www.mywebface.com/menus/widgets/radio-widget/images/modern/w_rr_fav4.png') no-repeat;
+}
+
+.item .inactive.favorite-action .heart {
+    background-position: 0 0;
+}
+
+.item:hover .inactive.favorite-action .heart {
+    background-position: 0 -14px;
+}
+
+.item .active.favorite-action .heart {
+    background-position: 0 -7px;
+}
+
+.item:hover .active.favorite-action .heart {
+    background-position: 0 -21px;
+}
+
+.item .inactive.favorite-action:hover .heart {
+    background-position: 0 -21px !important;
+}
+
+.item .pending.favorite-action .heart,
+.item .error.favorite-action .heart {
+    width: 9px;
+    height: 8px;
+    background: transparent url('http://www.mywebface.com/menus/widgets/radio-widget/images/modern/w_rr_fav_err_wait.png') no-repeat;
+}
+
+.item .pending.favorite-action .heart {
+    background-position: 0 -16px;
+}
+
+.item:hover .pending.favorite-action .heart {
+    background-position: 0 -24px;
+}
+
+.item .error.favorite-action .heart {
+    background-position: 0 0;
+}
+
+.item:hover .error.favorite-action .heart {
+    background-position: 0 -8px;
+}
+
+/* Name. */
+.item .name {
+    vertical-align: top;
+    display: block;
+    padding: 4px 0 0 10px;
+    margin: 0 48px 0 26px;
+}
+
+/* Options action. */
+.item .options-action {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    width: 15px;
+    height: 15px;
+    margin: 3px 0;
+    background: transparent url('http://www.mywebface.com/menus/widgets/radio-widget/images/modern/w_rr_options2.png') no-repeat 0 0;
+}
+
+.item:hover .options-action {
+    display: block;
+}
+
+.item .options-action:hover {
+    background-position: 0 -15px;
+}
+
+/* Item information. */
+.item .info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 47px;
+    height: 21px;
+    border-left: 1px solid #4A6D78;
+}
+
+/* Bitrate. */
+.item .bitrate {
+    color: #4A6D78;
+    font-size: 10px;
+    padding: 4px 6px;
+
+    display: block;
+    text-align: right;
+}
+
+/* Spinner. */
+#spinner {
+    text-align: center;
+    position: relative;
+    height: 100%;
+}
+
+.msie7 #spinner {
+    height: 350px;
+}
+
+#spinner .wrapper1 {
+    position: absolute;
+    height: 44px;
+    width: 100%;
+    top: 50%;
+}
+
+.msie7 #spinner .wrapper1 {
+    left: 0;
+}
+
+#spinner .wrapper2 {
+    position: relative;
+    top: -22px;
+    color: #caedf8;
+}
+
+.msie7 #spinner .wrapper2 {
+    left: 0;
+}
+
+#spinner img {
+    display: block;
+    margin: auto;
+}
+
+/* Retry section. */
+#retry {
+    color: white;
+}
+
+/* Tabs. */
+#tabs {
+    width: 100%;
+    height: 52px;
+    position: relative;
+    top: 0;
+    left: 0;
+	clear: both;
+    margin-bottom: 5px;
+}
+
+.tab {
+    float: left;
+    text-align: center;
+    color: #000;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.tab .label {
+    float: left;
+    height: 27px;
+    width: 71px;
+    line-height: 21px;
+    background: url('http://www.mywebface.com/menus/widgets/radio-widget/images/modern/tb_rr_nav2a.png') no-repeat 0 0;
+    padding-top: 25px;
+    border-bottom: 1px solid #89888c;
+}
+
+.tab.selected .label {
+	border-bottom: none;
+}
+
+#featured-tab {
+	background-position: 0 0;
+}
+
+.tab:hover #featured-tab {
+	background-position: 0 -53px;
+}
+
+.tab.selected #featured-tab {
+    background-position: 0 -106px;
+}
+
+#local-tab {
+	background-position: -71px 0;
+}
+
+.tab:hover #local-tab {
+	background-position: -71px -53px;
+}
+
+.tab.selected #local-tab {
+    background-position: -71px -106px;
+}
+
+#locations-tab {
+	background-position: -142px 0;
+}
+
+.tab:hover #locations-tab {
+	background-position: -142px -53px;
+}
+
+.tab.selected #locations-tab {
+    background-position: -142px -106px;
+}
+
+#music-tab {
+	background-position: -213px 0;
+}
+
+.tab:hover #music-tab {
+	background-position: -213px -53px;
+}
+
+.tab.selected #music-tab {
+    background-position: -213px -106px;
+}
+
+#talk-tab {
+	background-position: -284px 0;
+	width: 70px;
+}
+
+.tab:hover #talk-tab {
+	background-position: -284px -53px;
+}
+
+.tab.selected #talk-tab {
+    background-position: -284px -106px;
+}
+
+#sports-tab {
+	background-position: -354px 0;
+	width: 70px;
+}
+
+.tab:hover #sports-tab {
+	background-position: -354px -53px;
+}
+
+.tab.selected #sports-tab {
+    background-position: -354px -106px;
+}
+
+/* Featured items. */
+.featured-item {
+    display: inline-block;
+    color: #CAEDF8;
+    width: 185px;
+    margin: 10px 0 10px 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.msie7 .featured-item {
+    display: inline;
+    zoom: 1;
+}
+
+.featured-item .thumbnail {
+    border: 1px solid #6E919C;
+    width: 77px;
+    height: 77px;
+    position: relative;
+}
+
+.featured-item .thumbnail img {
+    width: 77px;
+    height: 77px;
+}
+
+.featured-item .thumbnail .play-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: transparent url('http://www.mywebface.com/menus/widgets/radio-widget/images/modern/w_rr_play.png') no-repeat 0 0;
+}
+
+.afeatured-item:hover .thumbnail {
+    border-color: #CAEDF8;
+}
+
+.afeatured-item:hover {
+    background-color: #77F2FC;
+}
+
+.afeatured-item:hover .text {
+    color: #11343F;
+}
+
+.featured-item:hover .thumbnail .play-button {
+    background-position: 0 -15px;
+}
+
+.featured-item .text {
+    position: absolute;
+    top: 15px;
+    left: 85px;
+}
+
+.featured-item .title {
+    font-weight: bold;
+}

@@ -1,0 +1,17 @@
+{
+   "app": {
+      "launch": {
+         "web_url": "https://www.hipchat.com/chat"
+      },
+      "urls": [ "*://www.hipchat.com/chat" ]
+   },
+   "description": "HipChat is a hosted private chat service built for business. Supercharge team collaboration with group chat and IM.",
+   "icons": {
+      "128": "icon_128.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCw6/fl2Emm+Ga+IKhiLpjm6BX8YS5T2ielpbpnO+VP742T6MOe15PAwUfUQhqQXenVJDonUODccyLaFwJ9l/8Q2jjG2ZwksuNjh/gbmpaYOv1FuvK70aCTBiQAN0WCXptfulRebKeOrsLTV4w1r8hUVUOdY5e3297UGIaN95RT6QIDAQAB",
+   "name": "HipChat",
+   "permissions": [ "notifications" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.0"
+}

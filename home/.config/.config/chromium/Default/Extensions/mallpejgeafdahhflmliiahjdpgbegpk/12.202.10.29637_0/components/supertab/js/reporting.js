@@ -1,0 +1,1 @@
+var ssTpr = 'tabsbsug'; // tpr value for search suggest

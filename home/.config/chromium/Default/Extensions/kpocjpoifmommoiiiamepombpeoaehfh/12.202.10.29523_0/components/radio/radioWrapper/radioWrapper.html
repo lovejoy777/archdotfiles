@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+<head id="headElement">
+    <script type="text/javascript" src="sm2/soundmanager2.js"></script>
+    <script type="text/javascript">
+        soundManager.url = 'http://ak.imgfarm.com/images/toolbar/radio/sm2/';
+        soundManager.debugMode = false;
+        soundManager.debugFlash = false;
+        soundManager.flashVersion = 9;
+        soundManager.defaultOptions.volume = 50;
+
+        function removeScriptTag(id) {
+            if (id) {
+                var tag = document.getElementById(id);
+                if (tag) {
+                    tag.parentNode.removeChild(tag);
+                }
+            }
+        }
+
+        function signalError() {
+            var clickEvent = document.createEvent('MouseEvents');
+            clickEvent.initMouseEvent('click', true, false, document, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+            document.body.dispatchEvent(clickEvent);
+        }
+
+        function signalPlaying() {
+            var mouseUpEvent = document.createEvent('MouseEvents');
+            mouseUpEvent.initMouseEvent('mouseUp', true, false, document, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+            document.body.dispatchEvent(mouseUpEvent);
+        }
+
+        var radio = {
+            playlist: new Array(),
+            currentUrl: '',
+            sound: null,
+            position: 0,
+
+
+            clearPlaylist: function(tagId) {
+                removeScriptTag(tagId);
+                this.playlist = new Array();
+                this.stop();
+            },
+
+            play: function(tagId) {
+                removeScriptTag(tagId);
+                if (this.playlist.length == 0) {
+                    signalError();
+                    return;
+                }
+                //Make sure we're not already playing - deals w/ a timing issue.
+                if (!this.sound || this.sound.playState == 0) {
+                    var self = this;
+                    this.position = 0;
+                    var url = this.playlist[0];
+                    this.currentUrl = url;
+                    this.sound = soundManager.createSound({
+                        id: 'radio',
+                        url: url,
+                        stream: true,
+                        onload: function(success) {
+                            if (!success) {
+                                self.stop();
+                                self.removeFromPlaylist();
+                                self.currentUrl = '';
+                            }
+                        },
+                        whileplaying: function() {
+                            self.position = this.position;
+                        }
+                    });
+                    this.sound.load();
+                    //Buffer for 3 seconds
+                    this.sound.play();
+
+                    errorCheck = function() {
+                        if (url == self.currentUrl && self.position == 0 && !self.sound.isBuffering) {
+                            var currentUrl = self.playlist[0];
+                            //Might have been removed already.
+                            if (currentUrl) {
+                                if (currentUrl.charAt(currentUrl.length-1) != ';') {
+                                    //Trying shoutcast hack
+                                    self.playlist[0] = currentUrl + ';';
+                                    self.stop();
+                                    self.play();
+                                } else {
+                                    //Already tried hack.  Move on.
+                                    self.removeFromPlaylist();
+                                }
+                            }
+                        }
+                    };
+
+                    playingCheck = function() {
+                        if (url = self.currentUrl) {
+                            if (self.position != 0) {
+                                signalPlaying();
+                            } else if (self.sound.isBuffering) {
+                                setTimeout(playingCheck, 500);
+                            }
+                        }
+                    };
+                    setTimeout(errorCheck, 3000);
+                    setTimeout(playingCheck, 1500);
+                }
+            },
+
+            stop: function(tagId) {
+                removeScriptTag(tagId);
+                if (this.sound) {
+                    soundManager.destroySound(this.sound.sID);
+                }
+            },
+
+            addToPlaylist: function(tagId, url) {
+                removeScriptTag(tagId);
+                this.playlist.push(url);
+            },
+
+            removeFromPlaylist: function() {
+                if (this.playlist.length > 0) {
+                    this.playlist.shift();
+                    this.play();
+                }
+            },
+
+            setVolume: function(tagId, volume) {
+                removeScriptTag(tagId);
+                if (this.sound && volume) {
+                    this.sound.setVolume(volume);
+                }
+            }
+        };
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

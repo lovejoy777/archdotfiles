@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script type="text/javascript" src="../../../common/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="../../../common/js/underscore-1.3.1.min.js"></script>
+    <script type="text/javascript" src="../../../common/js/eventListening.js"></script>
+    <script type="text/javascript" src="../../../common/js/common.js"></script>
+    <script type="text/javascript" src="../../../common/js/dynamic.js"></script>
+    <script type="text/javascript" src="../js/movieReviews.js"></script>
+    <link rel="stylesheet" href="../css/movieReviews.css"/>
+</head>
+
+<body>
+<div class="topbar">
+    <div class="logo floatLeft"></div>
+    <div class="windowTitle floatLeft">Movie Reviews</div>
+    <div id="close-button" class="closeBtn floatRight"></div>
+</div>
+<div id="mainContent" class="mainContent">
+    <div class="leftNav floatLeft">
+        <div id="movie_item" class="item">
+            <div id="movieIcon" class="icon floatLeft"></div>
+            <div id="selectFeed0" class="itemTitle"><a id="a_movie" href="#">Movies</a></div>
+        </div>
+        <div id="video_item" class="item">
+            <div id="videoIcon" class="icon floatLeft"></div>
+            <div id="selectFeed1" class="itemTitle"><a id="a_video"  href="#">DVDs</a></div>
+        </div>
+
+        <div class="power">
+			Powered by <a href="#" id="feedLink">Rotten Tomatoes</a><sup>&reg;</sup>
+		</div>
+    </div>
+    <div class="rightNav floatLeft">
+        <div id="movieFeeds" class="feedsContent">
+
+            <div id="topFeeds" class="feedLeft"></div>
+
+            <div id="openFeeds" class="feedRight"></div>
+            <div id="frmovieFeeds" class="feedBottom"></div>
+        </div>
+        <div id="videoFeeds" class="feedsContent">
+            <div id="newvidFeeds" class="feedLeft"></div>
+            <div id="topdvdFeeds" class="feedRight"></div>
+            <div id="frvidFeeds" class="feedBottom"></div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

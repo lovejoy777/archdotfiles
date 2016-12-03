@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=GParted
+Name[en_GB]=GParted
+GenericName=Partition Editor
+GenericName[en_GB]=Partition Editor
+X-GNOME-FullName=GParted Partition Editor
+X-GNOME-FullName[en_GB]=GParted Partition Editor
+Comment=Create, reorganize, and delete partitions
+Comment[en_GB]=Create, reorganise, and delete partitions
+Exec=/usr/bin/gparted_polkit %f
+Icon=gparted
+Terminal=false
+Type=Application
+Categories=GNOME;System;Filesystem;
+Keywords=Partition;
+Keywords[en_GB]=Partition:
+StartupNotify=true
+X-XFCE-Source=file:///usr/share/applications/gparted.desktop

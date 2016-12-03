@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>New Tab</title>
+    <meta name="robots" content="noindex">
+    <meta name="robots" content="noarchive">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <script type="text/javascript" src="common/js/underscore-1.5.2.min.js"></script>
+    <script type="text/javascript" src="common/js/global.js"></script>
+	<script type="text/javascript" src="common/js/PartnerId.js"></script>
+    <script type="text/javascript" src="common/js/common.js"></script>
+    <script type="text/javascript" src="common/js/global.js"></script>
+    <script type="text/javascript" src="common/js/dynamic.js"></script>
+    <script type="text/javascript" src="js/messaging.js"></script>
+    <script type="text/javascript" src="common/adapter/adapterUtil.js"></script>
+    <script type="text/javascript" src="js/mutation_summary-min.js"></script>
+    <script type="text/javascript" src="buildVars.js"></script>
+    <script type="text/javascript" src="js/scriptInjector.js"></script>
+    <script type="text/javascript" src="js/reservespacefortoolbar.js"></script>
+    <script type="text/javascript" src="js/reservespaceifenabled.js"></script>
+
+    <script type="text/javascript" src="native/libs/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="native/ce.js"></script>
+
+    <link rel="stylesheet" href="contentScript.css"/>
+    <link rel="stylesheet" href="spent.css"/>
+</head>
+
+<body id="ng-app" ng-app="MywebfaceNT" current-bg="currentBG" position-directive="">
+    <div class="containerWrapper" style="padding-top: 63px; padding-bottom: 63px;">
+        <div class="searchContainer">
+            <search-box></search-box>
+            <div class="group iconsurl">
+                <ul>
+                    <li class="iconsli"><a title="gmail" id="gmail" class="furl track" data-label="gmail" href="https://mail.google.com" target="_blank"></a></li>
+                    <li class="iconsli"><a title="yahoo" id="yahoo" class="furl track" data-label="yahoo" href="http://www.yahoo.com" target="_blank"></a></li>
+                    <li class="iconsli"><a title="facebook" id="facebook" class="furl track" data-label="facebook" href="http://www.facebook.com" target="_blank"></a></li>
+                    <li class="iconsli"><a title="youtube" id="youtube" class="furl track" data-label="youtube" href="http://www.youtube.com" target="_blank"></a></li>
+                    <li class="iconsli"><a title="amazon" id="amazon" class="furl track" data-label="amazon" href="http://www.amazon.com/gp/redirect.html?ie=UTF8&amp;location=http%3A%2F%2Fwww.amazon.com%2F&amp;tag=wwwmindsparkc-20&amp;linkCode=ur2&amp;camp=1789&amp;creative=9325" target="_blank"></a></li>
+                    <li class="iconsli"><a title="twitter" id="twitter" class="furl track" data-label="twitter" href="https://www.twitter.com" target="_blank"></a></li>
+
+                    <li class="iconsli"><a title="wikipedia" id="wikipedia" class="furl track" data-label="wikipedia" href="http://www.wikipedia.org/" target="_blank"></a></li>
+                    <!--li class="iconsli"><a title="vimeo" id="vimeo" class="furl track" data-label="vimeo" href="http://www.vimeo.com/" target="_blank"></a></li-->
+                    <li class="iconsli"><a title="pinterest" id="pinterest" class="furl track" data-label="pinterest" href="http://www.pinterest.com/" target="_blank"></a></li>
+                    <li class="iconsli"><a title="ebay" id="ebay" class="furl track" data-label="ebay" href="http://www.ebay.com/" target="_blank"></a></li>
+                    <!--li class="iconsli"><a title="about" id="about" class="furl track" data-label="about" href="http://www.about.com/" target="_blank"></a></li-->
+                    <li class="iconsli"><a title="instagram" id="instagram" class="furl track" data-label="instagram" href="http://www.instagram.com/" target="_blank"></a></li>
+                    <!--li class="iconsli"><a title="ask" id="ask" class="furl track" data-label="ask" href="http://www.ask.com/" target="_blank"></a></li-->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+		<div class="links">
+            TM, &reg; + &copy; 2014 Ask.com |
+            <a id="help" target="_blank" href="http://helpcenter.mindspark.com/chrome">Help</a> |
+            <a id="eula" target="_blank" href="http://eula.mindspark.com/eula/">End User License Agreement</a> |
+            <a id="privacy" target="_blank" href="http://eula.mindspark.com/eula/#Privacy">Privacy Policy</a>
+		</div>
+		<div class="logo"></div>
+	</footer>
+    
+    <script type="text/javascript" src="contentScript.js"></script>
+    <script type="text/javascript" src="spent.js"></script>
+
+</body>
+</html>

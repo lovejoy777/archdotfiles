@@ -1,0 +1,3 @@
+2016/12/03-18:40:17.726 1445 Reusing MANIFEST /home/steve/.config/chromium/Default/IndexedDB/https_www.google.co.uk_0.indexeddb.leveldb/MANIFEST-000001
+2016/12/03-18:40:17.726 1445 Recovering log #3
+2016/12/03-18:40:17.764 1445 Reusing old log /home/steve/.config/chromium/Default/IndexedDB/https_www.google.co.uk_0.indexeddb.leveldb/000003.log 

@@ -1,0 +1,134 @@
+.radio {
+	background: url(/images/RadioPlayerSprite.png) transparent no-repeat;
+	border: 0;
+	border-radius: 0;
+	height: 19px;
+	line-height: 20px;
+	width: 19px;
+	padding: 0;
+	margin: 0;
+	font-size: 11px;
+	vertical-align: middle;
+}
+
+.volume-slider {
+	background-position: 0 -332px;
+	position: absolute;
+	top: 8px;
+	left: 39px;
+	height: 16px;
+	width: 91px;
+	-webkit-appearance: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+	background: url(/images/RadioPlayerSprite.png) transparent no-repeat 0 -305px;
+	height: 9px;
+	width: 9px;
+	-webkit-appearance: none;
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+	background-position: 0 -314px;
+}
+
+.volume-slider::-webkit-slider-thumb:active {
+	background-position: 0 -323px;
+}
+
+.station {
+	width: 96px;
+}
+
+.station-name {
+	display: block;
+	padding-left: 2px;
+	white-space: nowrap;
+	width: 79px;
+	overflow: hidden;
+}
+
+.volume {
+	background-position: 0 -19px;
+}
+
+.volume:hover {
+	background-position: 0 -38px;
+}
+
+.volume:active {
+	background-position: 0 -57px;
+}
+
+.toggle-play {
+	background-position: 0 -134px;
+}
+
+.toggle-play:hover {
+	background-position: 0 -153px;
+}
+
+.toggle-play:active {
+	background-position: 0 -172px;
+}
+
+.playing {
+	background-position: 0 -77px;
+}
+
+.playing:hover {
+	background-position: 0 -96px;
+}
+
+.playing:active {
+	background-position: 0 -115px;
+}
+
+.toggle-display {
+	width: 16px;
+}
+
+.toggle-display {
+	background-position: 0 -248px;
+}
+
+.toggle-display:hover {
+	background-position: 0 -267px;
+}
+
+.toggle-display:active {
+	background-position: 0 -286px;
+}
+
+.collapsed .toggle-display {
+	background-position: 0 -191px;
+}
+
+.collapsed .toggle-display:hover {
+	background-position: 0 -210px;
+}
+
+.collapsed .toggle-display:active {
+	background-position: 0 -229px;
+}
+
+.state-icon {
+	background-position: 0 -348px;
+	display: block;
+	float: right;
+	height: 3px;
+	margin: 9px 1px 0 0;
+	width: 11px;
+}
+
+.loading {
+	background-position: 0 -362px;
+	height: 8px;
+	margin: 6px 1px 0 0;
+}
+
+.error {
+	background-position: 0 -353px;
+	height: 9px;
+	margin: 6px 4px 0 0;
+}

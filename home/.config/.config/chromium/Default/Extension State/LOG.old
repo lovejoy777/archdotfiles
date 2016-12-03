@@ -1,0 +1,10 @@
+2016/12/03-20:04:55.020 14850 Log #115: dropping 1219 bytes; Corruption: missing start of fragmented record(2)
+2016/12/03-20:04:55.758 14850 Log #115: 6821 ops saved to Table #117 OK
+2016/12/03-20:04:55.864 14850 Archiving /home/steve/.config/chromium/Default/Extension State/000115.log: OK
+2016/12/03-20:04:56.133 14850 Table #114: 12618 entries OK
+2016/12/03-20:04:56.531 14850 Table #116: 13323 entries OK
+2016/12/03-20:04:56.719 14850 Table #108: 10 entries OK
+2016/12/03-20:04:57.138 14850 Table #111: 8511 entries OK
+2016/12/03-20:04:57.142 14850 Table #117: 6821 entries OK
+2016/12/03-20:04:57.143 14850 Archiving /home/steve/.config/chromium/Default/Extension State/MANIFEST-000001: OK
+2016/12/03-20:04:58.626 14850 **** Repaired leveldb /home/steve/.config/chromium/Default/Extension State; recovered 5 files; 4146419 bytes. Some data may have been lost. ****

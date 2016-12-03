@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head id="headElement">
+	<title></title>
+	<script src="navRedirector.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	var navRedirect;
+
+	function setEmbedCode(content) {
+	    //This is necessary so that the code runs after this function is called.
+	    setTimeout(function() {
+	        document.write(content);
+	        if (navRedirect) {
+	            NavRedirector.redirectNavigation();
+	        }
+	    }, 0);
+	}
+
+	window.addEventListener('message', function(event) {
+		if (event.origin.indexOf('chrome-extension://') === 0) {
+			try {
+				var message = event.data;
+				if (message.mindspark) {
+					navRedirect = message.navRedirect;
+
+					var head = document.getElementById('headElement');
+					var scriptTag = document.createElement('script');
+					scriptTag.setAttribute('src', message.jsUrl);
+					head.appendChild(scriptTag)
+				}
+			} catch (e) {
+				console.warn(e)
+			}
+		}
+	}, false);
+</script>
+</body>
+</html>

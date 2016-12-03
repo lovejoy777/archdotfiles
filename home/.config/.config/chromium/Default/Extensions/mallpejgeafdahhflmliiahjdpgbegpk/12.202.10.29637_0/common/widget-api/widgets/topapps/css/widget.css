@@ -1,0 +1,39 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    border: 2px solid #FFF;
+    border-right-color: #9D9DA1;
+    border-bottom-color: #9D9DA1;
+    background-color: #E0DFE3;
+
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+.item {
+    margin: 0 1px;
+    padding: 3px;
+    cursor: default;
+}
+
+.icon {
+    vertical-align: middle;
+    margin: 2px 5px 3px 2px;
+    width: 16px;
+    height: 16px;
+}
+
+.item:hover {
+    color: #FFF;
+    background-color: #0A246A;
+}
+
+.separator {
+    height: 1px;
+    background-color: #666;
+    margin: 1px 3px;
+}

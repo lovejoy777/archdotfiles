@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html manifest="app.manifest?releaseid=current" lang="en-GB">
+<head>
+    <meta charset="utf-8" />
+    <title>BBC micro:bit</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="format-detection" content="telephone=no">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="https://az742082.vo.msecnd.net/files/icons/micro-bit_primary_colour_57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://az742082.vo.msecnd.net/files/icons/micro-bit_primary_colour_72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://az742082.vo.msecnd.net/files/icons/micro-bit_primary_colour_114x114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://az742082.vo.msecnd.net/files/icons/micro-bit_primary_colour_144x144.png" />
+    <link rel="apple-touch-icon" sizes="200x200" href="https://az742082.vo.msecnd.net/files/icons/micro-bit_primary_colour_200x200.png" />
+    <meta name="Description" content="BBC micro:bit"/>
+    <meta name="application-name" content="BBC micro:bit"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="msapplication-tooltip" content="BBC micro:bit"/>
+    <meta name="msapplication-starturl" content="https://live.microbit.co.uk/"/>
+    <meta name="msapplication-TileColor" content="#008B00"/>
+    <meta name="msapplication-TileImage" content="https://az742082.vo.msecnd.net/files/icons/micro-bit_primary_colour_310x310.png"/>
+    <meta property="og:title" content="BBC micro:bit"/>
+    <meta property="og:site_name" content="BBC micro:bit"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="BBC micro:bit" />
+    <meta property="og:image" content="https://az742082.vo.msecnd.net/files/icons/micro-bit_primary_colour_200x200.png" />
+    <meta property="og:url" content="" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="google" content="notranslate" />
+    <link rel="shortcut icon" sizes="196x196" href="https://az742082.vo.msecnd.net/files/icons/micro-bit_primary_colour_196x196.png" />
+</head>
+<body role="application" id="realRoot">
+  <!--
+    <meta name="msapplication-task" content="name=Hub;action-uri=/app/;icon-uri=/favicon.ico" />
+    <meta name="msapplication-task" content="name=My Scripts;action-uri=/app/#list:installed-scripts;icon-uri=/favicon.ico" />
+    <meta name="msapplication-task" content="name=Forum;action-uri=/app/#list:installed-scripts:script:bttt:comments;icon-uri=/favicon.ico" />
+    <meta name="msapplication-task" content="name=Notifications;action-uri=/app/#list:installed-scripts:notifications:ajlk:notifications;icon-uri=/favicon.ico" />
+    <meta property="fb:app_id" content="239441802766379" />
+    <meta name="msapplication-badge" content="frequency=30; polling-uri=https://www.touchdevelop.com/api/me/badge"/>    
+    -->
+  
+		<!--/ Site Header -->    
+<style>
+#leftBtnRow, .apiTopDiv {
+  background: #44ddfe url(https://az742082.vo.msecnd.net/files/images/bg-site-header-mobile.png) center top no-repeat !important;
+  background-size: cover !important;  
+}
+
+/* menu bar */
+.site-header {
+  background: #000;  
+  color:#fff;
+  border-bottom: 1px solid #fff;
+  height: 2.5em;
+  font-size: 0.7em;
+  padding-top: 1em;
+  text-align: left; 
+}
+
+.landscape .slRoot, .portrait .slRoot {
+  height: calc(100% - 4em);
+}
+
+.phone .site-header {
+  height:4em;
+}
+
+.phone .slRoot {
+  height: calc(100% - 4em);
+}
+
+#root[data-is-editor="yes"] #siteHeader {
+  display:none;
+}
+
+.lt-ie9 .site-header {
+    background-image: url(https://az742082.vo.msecnd.net/files/images/bg-site-header.png);
+    text-align: left; 
+}
+.site-logo > a > svg {
+  display: block;
+  float: left;
+  max-width: 100%;
+  width: 12em;
+  margin-top:  0em;
+  margin-left: 1em; 
+  cursor: pointer;
+  height: 2em;
+}
+
+.site-logo:hover {
+      background-color: rgba(255, 255, 255, 0.25); }
+.site-logo:focus {
+    background-color: rgba(255, 255, 255, 0.25); }    
+    
+.phone .site-logo {
+  width:14em;
+  margin-top:0.5em;
+}
+    
+/* Nav */
+.site-nav {
+      float: right;
+      margin-top: 21px;
+      padding-top: 0;
+         }
+  .lt-ie9 .site-nav {
+    float: right;
+    margin-top: 21px;
+    padding-top: 0; }
+
+  .site-nav .nav-list__item--last {
+    margin-right: 0;
+    padding-right: 0; }
+
+.nav-list {
+  margin: 0;
+  margin-right:1em;
+  padding: 0; 
+  list-style-type: none;
+  }
+  .nav-list__item {
+    cursor:pointer;
+    display: inline-block;
+    margin: 0 9px 5px 0;
+    padding: 0 7px 2px;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    }
+  .nav-list__item:hover, .nav-list__item:active{
+    border-color:#fff !important;
+  }
+  .nav-list__item--selected {
+    text-decoration: underline; }    
+/**
+ * Layout helper classes
+ * Image replacement classes / show/hide classes
+ */
+
+/**
+ * Image replacement classes / show/hide classes
+ */
+.ir {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: 0;
+  direction: ltr;
+  display: block;
+  overflow: hidden;
+  text-align: left;
+  text-indent: -999em;
+  *line-height: 0; }
+
+.ir br {
+  display: none; }
+
+/* Hide content - soemtimes based upon JS being available or not */
+.hidden,
+.js .js-hidden,
+.no-js .no-js-hidden {
+  display: none;
+  visibility: hidden; }
+
+.no-js .js-only,
+.js .no-js-only {
+  display: none;
+  visibility: hidden; }
+
+/* Hidden but visible to screenreaders */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+
+.invisible {
+  visibility: hidden; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0; }
+
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto; }
+  
+/* Links
+   ========================================================================== */
+/* Default */
+.site-header a {
+  background-color: transparent;
+  color: inherit;
+  color: currentColor;
+  text-decoration: none;
+  	/**
+     * Improve readability of focused elements when they are also in an
+     * active/hover state.
+     */ }
+.site-header .lt-ie9 a:hover {
+    text-decoration: underline; }
+.site-header a:focus {
+    text-decoration: underline; }
+.site-header a:active {
+    text-decoration: none; }
+.site-header a:active, .site-header a:hover {
+    outline: 0; }
+         
+.site-container {
+  background: #fff;
+  color: #000;
+  font-family: "Helvetica Neue Bold", "Helvetica Neue", sans-serif;
+  font-size: 0.875em;
+  font-weight: 400;
+  line-height: 1.2;  
+}         
+
+/* hide back button in script list */
+.landscape .slBackContainer, .portrait .slBackContainer {
+  display:none;
+}
+.portrait .slSlideContainer {
+  display:none;
+}
+.landscape .slListHeader {
+  padding-left:0.5em;
+}
+.landscape .slList {
+  top:2.5em;
+}
+.landscape .slListHeader input { 
+  width:calc(100% - 4em);
+}
+.slListHeader button {
+  width: 2em;
+  height: 2em;
+  min-width: 2em;
+  padding: 0em;
+  margin: 0em 0em 0em 0.5em;
+  vertical-align: sub;  
+}
+.portrait .slListHeader button {
+  position: absolute;
+  right: 0.5em;  
+  top: 1.1em;
+}
+.portrait .slListHeader input {
+  left:0.5em !important;
+  width: calc(100% - 4em) !important;
+}
+
+div.notificationBox {
+  left:14em !important;
+  top:0.5em !important;
+  color:white;
+}
+
+div.skipMenu {
+  left:16.5em !important;
+  top:0.5em !important;
+  width: 15em !important;
+}
+
+.phone div.notificationBox {
+  left:16em !important;
+  top:1.3em !important;
+}
+
+.phone div.skipMenu {
+  left:18.5em !important;
+  top:1.3em !important;
+  width: 15em !important;
+}
+
+div.notificationBox > svg > path {
+  fill:#fff;
+}
+
+.site-menu-btn{
+  background: #333;
+  color: #fff;
+  position: absolute;
+  right:1em;
+  top:1em;
+  letter-spacing: -.025em;
+  padding: 0.5em 1em 0.6em 0.5em;
+  cursor:pointer;
+  font-weight: bold;
+  font-size:0.8em;
+}
+
+.phone .site-menu-btn {
+  top:0.75em;
+  font-size:1.25em;
+}
+
+.site-menu-btn svg {
+  width:2em;
+  height:2em;
+  vertical-align: middle;
+  margin:-0.6em 0em -0.5em 0em;
+}
+
+.site-user-btn {
+  position: absolute;
+  right: 6em;
+  top:0.3em;
+  cursor: pointer;  
+}
+
+.site-user-btn svg {
+  width:3em;
+  height:3em;
+  vertical-align: middle;
+}
+
+.portrait #siteMenu {
+  display:none;
+}
+.landscape #siteMore, .landscape #siteUser {
+  display:none;
+}
+
+li.siteMenuBtn {
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+  background: #444;
+  width: 100%;
+  color: white;
+  padding: 0.5em;
+  cursor:pointer;
+  border:none;
+}
+
+#slRoot, #externalEditorContainer {
+  /* 100% pxzagvwf 
+     75% psopafpj
+     50% xszvmobf
+     */
+  background: #fff url(https://az742082.vo.msecnd.net/pub/psopafpj) 0 0 repeat !important;
+}
+
+/*
+.modalOverlay {
+  background: #000 url(https://az742082.vo.msecnd.net/pub/pxzagvwf) 0 0 repeat !important;
+}*/
+
+.beta-note {
+  background:#333 !important;
+}
+.beta-legal {
+  color:#fff !important;
+}
+#siteLogo { cursor:pointer;}
+@font-face {
+  font-family: "TitleFont";
+  src: url("https://az742082.vo.msecnd.net/files/fonts/GTWalsheim/GTWalsheim_gdi.eot");
+  src: url("https://az742082.vo.msecnd.net/files/fonts/GTWalsheim/GTWalsheim_gdi.eot?#iefix") format("embedded-opentype"), url("https://az742082.vo.msecnd.net/files/fonts/GTWalsheim/GTWalsheim_gdi.woff2") format("woff2"), url("https://az742082.vo.msecnd.net/files/fonts/GTWalsheim/GTWalsheim_gdi.woff") format("woff"), url("https://az742082.vo.msecnd.net/files/fonts/GTWalsheim/GTWalsheim_gdi.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+  
+</style>    
+<div id="root">
+
+	<header id="siteHeader" role="banner" class="site-header hidden">  	
+				<div id="siteLogo" class="site-logo">          
+<a title="BBC micro:bit" href="https://www.microbit.co.uk/">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 312.894 32.755" height="32.755" width="312.894" role="image" aria-labelledby="title desck"><title>BBC micro:bit</title><desc>BBC micro:bit logo</desc><g fill="#fff"><path d="M45.795 8.354H65.67v18.703H45.795V8.354zm12.522 2.603c-.09-.02-.183-.032-.272-.045l-.104-.02c-.153-.017-.308-.04-.466-.05-.1-.014-.21-.02-.312-.027-.188-.008-.377-.016-.55-.016h-.215c-.144.007-.292.015-.44.02-.078.01-.158.014-.236.022-.12.01-.235.026-.353.037l-.1.01-.104.014-.127.026c-.06.006-.117.018-.176.028-.08.015-.152.028-.23.045-.47.104-.906.234-1.313.392-.206.078-.407.164-.592.256-.16.08-.313.163-.462.247-.14.082-.275.16-.405.254-.08.05-.146.1-.222.15-.06.046-.125.09-.18.136-.13.102-.248.195-.36.297-.11.095-.214.19-.31.285-.078.09-.166.17-.24.256-.08.092-.164.182-.24.27-.082.105-.16.21-.245.314-.05.082-.107.164-.16.246-.037.055-.072.117-.107.17-.21.34-.39.7-.543 1.09-.184.48-.315 1.002-.396 1.552-.022.177-.04.356-.05.537-.008.14-.01.278-.01.416 0 .107 0 .214.006.318.005.106.016.215.027.32l.012.076c.013.125.03.25.054.37.012.05.02.1.033.144.02.105.04.203.068.307.037.13.074.25.11.373.056.154.11.302.17.447.1.23.205.45.313.652.064.123.136.242.205.355.063.093.117.177.177.265.075.112.157.218.237.32.084.112.172.21.258.312.103.12.21.228.312.335l.055.05c.086.085.18.177.283.266.074.06.148.13.235.19.076.054.15.12.237.186.103.065.207.144.315.212.12.076.244.15.375.23.265.146.556.288.872.41.117.054.24.097.37.144.124.04.256.08.39.117.228.07.47.128.722.175.2.04.414.074.632.1.22.02.444.044.675.06.115.003.23.013.345.013.05.003.104.003.16.003.42 0 .81-.014 1.162-.05l.073-.005c.144-.01.278-.028.407-.043.216-.028.404-.055.595-.09.112-.02.226-.045.338-.066.173-.034.336-.074.49-.114.12-.037.224-.063.327-.1.13-.036.255-.075.37-.117l.12-.038c.05-.023.127-.047.223-.082.12-.05.26-.107.426-.18.096-.036.203-.086.31-.135.1-.045.206-.096.304-.143.043-.02.082-.04.13-.064v-2.55l-.09.052-.175.11c-.176.1-.336.2-.512.296-.188.097-.367.19-.544.275-.316.144-.617.274-.91.382-.56.193-1.07.324-1.516.404-.055.006-.104.02-.16.024-.125.02-.242.035-.36.05-.178.018-.335.024-.49.036-.1 0-.186.006-.27.006-.18 0-.368-.006-.56-.02-.22-.01-.448-.038-.678-.075-.367-.063-.737-.157-1.1-.288-.053-.023-.107-.04-.16-.06-.035-.015-.07-.03-.107-.048-.06-.024-.115-.05-.175-.076-.12-.06-.25-.12-.362-.19-.066-.04-.124-.07-.188-.103-.058-.044-.117-.083-.177-.124-.073-.046-.153-.1-.224-.16-.067-.052-.137-.112-.194-.166l-.088-.07-.044-.044-.02-.02-.028-.03c-.12-.116-.223-.23-.322-.347l-.15-.193c-.05-.06-.084-.125-.13-.19-.04-.06-.075-.12-.108-.18-.053-.084-.104-.183-.148-.27-.038-.074-.077-.152-.104-.224-.053-.13-.096-.26-.14-.387-.03-.096-.056-.19-.075-.282-.076-.267-.107-.51-.127-.714-.008-.08-.014-.155-.017-.222-.006-.102-.006-.19-.006-.266 0-.045 0-.1.005-.156.002-.15.016-.334.044-.545.02-.127.045-.262.08-.404.022-.097.048-.192.082-.295.024-.09.058-.18.093-.278.022-.06.054-.12.08-.188.038-.085.078-.173.125-.26.032-.065.065-.132.104-.195.083-.15.18-.29.288-.43.04-.057.076-.107.12-.155.056-.07.107-.135.173-.2.027-.026.06-.063.09-.097.468-.467.995-.814 1.534-1.06.086-.04.174-.08.26-.112.087-.032.175-.062.255-.1.102-.024.193-.053.29-.082.086-.024.18-.045.267-.07.094-.015.18-.038.268-.05.1-.02.2-.037.298-.047.103-.017.196-.026.294-.034.186-.017.365-.025.544-.025.063 0 .122 0 .18.005.133.006.268.006.385.018.088.006.174.006.262.018.158.02.31.038.46.06.13.022.26.043.38.072.18.033.35.078.5.113.094.022.184.05.27.074l.31.093c.144.05.22.08.22.08.124.04.25.096.37.146.16.062.315.134.467.197l.347.17c.09.04.18.084.262.13.14.07.254.137.356.187l.256.146v-2.51s-.158-.056-.427-.157c-.124-.05-.264-.104-.42-.154-.09-.034-.182-.07-.28-.106-.082-.02-.162-.058-.248-.08-.095-.033-.19-.068-.298-.096-.072-.023-.148-.045-.227-.064l-.07-.02c-.072-.025-.148-.045-.225-.066-.088-.025-.18-.043-.278-.065-.056-.02-.114-.034-.18-.05-.097-.02-.198-.043-.304-.064-.102-.026-.208-.048-.31-.063M30.52 18.667v3.67h2.513c.08-.004.196-.01.334-.02.26-.023.6-.07.932-.185.3-.102.59-.253.812-.474.087-.085.157-.18.212-.265.19-.295.24-.598.242-.77.008-.07.008-.108.008-.108v-.094c-.002-.07-.01-.21-.05-.356-.044-.178-.125-.377-.276-.56-.024-.038-.056-.07-.092-.105-.062-.067-.14-.128-.213-.185-.133-.098-.28-.184-.443-.25-.215-.092-.455-.166-.715-.217-.136-.02-.283-.043-.424-.055-.09-.008-.183-.02-.278-.024-.08-.004-.166-.006-.25-.006h-2.31v.003zM30.52 13.08v3.483h1.16s.077 0 .173-.006c.085-.002.182-.008.264-.014.24-.018.564-.05.898-.14.064-.02.123-.046.19-.06.26-.095.503-.232.692-.418.155-.15.254-.318.322-.48.085-.197.112-.392.127-.524.007-.122.007-.2.007-.2v-.148c-.007-.153-.048-.395-.16-.633-.06-.12-.136-.23-.244-.33-.13-.128-.29-.228-.46-.31-.32-.14-.696-.193-1.006-.214-.14-.01-.264-.01-.372-.01H30.52v.004z"/><path d="M22.897 8.354H42.77v18.703H22.898V8.354zm5.217 2.622V24.44h5.068s2.47.07 3.833-1.292c1.113-1.115 1.033-2.4 1.033-2.4s.08-1.34-.945-2.365c-.877-.878-1.998-1.115-1.998-1.115s.502-.234.895-.625c.183-.176.826-.77.826-2.186 0-1.425-.95-2.247-.95-2.247s-1.04-1.233-3.393-1.233h-4.37zM7.63 18.667v3.67h2.509c.08-.004.19-.01.325-.02.268-.023.603-.07.933-.185.308-.102.592-.253.815-.474.086-.085.154-.18.21-.265.19-.295.237-.598.25-.77v-.108s0-.04 0-.094c0-.07-.01-.21-.042-.356-.044-.178-.134-.377-.284-.56-.02-.038-.06-.07-.092-.105-.06-.067-.13-.128-.21-.185-.134-.098-.284-.184-.443-.25-.215-.092-.453-.166-.717-.217-.14-.02-.275-.043-.426-.055-.092-.008-.183-.02-.274-.024-.083-.004-.17-.006-.25-.006H7.63v.003zM7.63 13.08v3.483h1.147s.077 0 .176-.006c.086-.002.182-.008.267-.014.237-.018.567-.05.892-.14.07-.02.133-.046.194-.06.257-.095.505-.232.7-.418.156-.15.25-.318.314-.48.088-.197.116-.392.126-.524.013-.122.01-.2.01-.2s.003-.055 0-.148c-.012-.153-.038-.395-.163-.633-.05-.12-.133-.23-.24-.33-.13-.128-.29-.228-.46-.31-.324-.14-.698-.193-1.01-.214-.138-.01-.26-.01-.362-.01H7.63v.004z"/><path d="M0 8.354h19.87v18.703H0V8.354zm5.213 2.622V24.44h5.065s2.476.07 3.843-1.292c1.105-1.115 1.028-2.4 1.028-2.4s.077-1.34-.95-2.365c-.874-.878-1.993-1.115-1.993-1.115s.502-.234.895-.625c.18-.176.828-.77.828-2.186 0-1.425-.953-2.247-.953-2.247s-1.038-1.233-3.393-1.233h-4.37z"/></g><path d="M122.91 20.746c-1.677 0-3.035-1.364-3.035-3.042s1.357-3.038 3.035-3.038c1.684 0 3.04 1.36 3.04 3.038s-1.356 3.042-3.04 3.042M100.6 14.67c-1.678 0-3.043 1.356-3.043 3.034s1.363 3.042 3.042 3.042c1.673 0 3.035-1.364 3.035-3.042s-1.363-3.035-3.036-3.035m-.004-5.99h22.576c4.98 0 9.027 4.046 9.027 9.026 0 4.98-4.05 9.03-9.028 9.03h-22.576c-4.977 0-9.03-4.052-9.03-9.03 0-4.98 4.053-9.027 9.03-9.027m22.576 24.075c8.3 0 15.047-6.75 15.047-15.05s-6.75-15.05-15.048-15.05h-22.576c-8.3 0-15.05 6.752-15.05 15.05s6.75 15.05 15.05 15.05h22.576m112.1-21.953c0-1.453-1.196-2.633-2.663-2.633-1.456 0-2.64 1.18-2.64 2.632 0 1.47 1.184 2.672 2.64 2.672 1.465 0 2.66-1.202 2.66-2.672zm-66.787 5.445c0-4.764-2.893-8.093-7.03-8.093-2.028 0-3.815.85-5.224 2.47-1.466-1.66-3.15-2.47-5.126-2.47-4.162 0-7.066 3.33-7.066 8.093v10.466h3.812V16.07c0-2.417 1.336-4.105 3.254-4.105 1.617 0 3.25 1.41 3.25 4.104v10.644h3.848V16.07c0-2.417 1.338-4.105 3.252-4.105 1.863 0 3.217 1.727 3.217 4.104v10.644h3.815V16.247zm6.953-7.632h-3.846v18.1h3.846v-18.1zm.57-5.128c0-1.377-1.097-2.454-2.493-2.454-1.4 0-2.453 1.054-2.453 2.454 0 1.398 1.078 2.494 2.453 2.494s2.492-1.116 2.492-2.493zM194.334 24.4l.576-.52-2.827-2.658-.488.455c-1.252 1.15-2.504 1.686-3.945 1.686-3.064 0-5.557-2.557-5.557-5.7 0-3.12 2.492-5.66 5.557-5.66 1.432 0 2.646.522 3.95 1.694l.51.46 2.75-2.802-.49-.502c-1.755-1.793-4.017-2.696-6.72-2.696-2.46 0-4.87 1.022-6.605 2.798-1.738 1.734-2.69 4.12-2.69 6.71 0 2.595.952 4.978 2.683 6.704 1.77 1.81 4.117 2.81 6.615 2.81 2.4-.003 4.647-.937 6.682-2.78zm7.25-6.946c0-3.322 1.145-4.686 4.217-5.03l.64-.07V8.56l-.776.058c-5.63.458-8.143 3.247-8.143 9.048v9.05h4.062v-9.26zm21.998 6.923c1.762-1.756 2.73-4.146 2.73-6.715 0-2.565-.968-4.95-2.724-6.702-1.77-1.81-4.106-2.806-6.577-2.806-2.492 0-4.84.997-6.613 2.806-1.752 1.792-2.72 4.174-2.72 6.702 0 2.53.968 4.916 2.72 6.707 1.77 1.81 4.12 2.807 6.613 2.807 2.472 0 4.808-.998 6.57-2.8zm-1.23-6.714c0 3.18-2.36 5.665-5.376 5.665-2.945 0-5.346-2.54-5.346-5.665 0-3.137 2.4-5.695 5.347-5.695 2.963-.002 5.377 2.558 5.377 5.695zm12.918 6.418c0-1.467-1.194-2.666-2.66-2.666-1.456 0-2.64 1.2-2.64 2.667 0 1.454 1.184 2.633 2.64 2.633 1.465 0 2.66-1.18 2.66-2.632zm19.508.297c1.76-1.756 2.73-4.146 2.73-6.715 0-2.528-.973-4.91-2.73-6.702-1.745-1.787-4.08-2.77-6.573-2.77-2.035 0-3.84.572-5.484 1.744V0h-3.815l.008 15.582c-.037.41-.037.82-.037 1.198 0 6.12 3.836 10.396 9.33 10.396 2.475 0 4.807-.997 6.572-2.8zm-1.013-6.677c0 3.123-2.494 5.66-5.56 5.66-3.114 0-5.556-2.484-5.556-5.66 0-3.143 2.493-5.698 5.556-5.698 3.065 0 5.56 2.556 5.56 5.698zm10.88-9.085H260.8v18.1h3.846v-18.1zm.573-5.128c0-1.377-1.098-2.454-2.492-2.454-1.4 0-2.457 1.054-2.457 2.454 0 1.398 1.075 2.494 2.456 2.494 1.373 0 2.492-1.116 2.492-2.493zm13.83 19.76l-.62-.09c-2.854-.41-4.132-2.104-4.132-5.495v-5.126h4.752V8.862h-4.752V4.856h-3.887v4.006h-1.663v3.674h1.662v4.525c0 6.216 2.112 8.933 7.782 10.03l.855.164v-4.008z" fill="#fff"/></svg>
+</a>   
+        </div>
+        <div id="siteNotifications" class="notificationBox"></div>
+        <div id="siteSkipMenu" class="skipMenu" role="menu"></div>
+        <nav role="menubar" role="navigation" aria-label="Menu">
+	    <ul id="siteMenu" class="nav-list site-nav">
+		</ul>
+        <button id="siteMore" tabindex="0" role="button" class="site-menu-btn nav-list__item">More</button>
+        </nav>
+  </header>
+
+
+<div id="loading" style="width: 40%; margin-left: 30%; margin-top: 10%;text-align: center; color: #81e774; font-family: sans-serif; ">
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100%" viewBox="220 150 150 100" enable-background="new 0 0 595.28 419.53" xml:space="preserve">
+     <title>BBC micro:bit loading</title>
+<path d="M302.736,166.265h11.19v10.53h-11.19V166.265z M309.785,167.73c-0.05-0.012-0.101-0.019-0.151-0.026l-0.061-0.008
+	c-0.086-0.012-0.172-0.021-0.26-0.029c-0.058-0.009-0.119-0.012-0.178-0.014c-0.107-0.006-0.211-0.01-0.311-0.01
+	c-0.048,0-0.073,0.001-0.12,0.001c-0.082,0.003-0.165,0.007-0.248,0.011c-0.044,0.003-0.09,0.007-0.133,0.012
+	c-0.068,0.006-0.135,0.013-0.199,0.02l-0.056,0.009l-0.059,0.007l-0.074,0.013c-0.031,0.002-0.064,0.01-0.096,0.016
+	c-0.045,0.01-0.088,0.016-0.132,0.027c-0.264,0.058-0.51,0.132-0.738,0.219c-0.116,0.044-0.229,0.093-0.335,0.146
+	c-0.089,0.044-0.176,0.088-0.258,0.137c-0.079,0.046-0.156,0.09-0.229,0.142c-0.045,0.027-0.083,0.057-0.125,0.086
+	c-0.034,0.024-0.07,0.05-0.102,0.074c-0.073,0.058-0.141,0.112-0.203,0.169c-0.062,0.053-0.12,0.106-0.175,0.161
+	c-0.044,0.05-0.093,0.096-0.136,0.143c-0.044,0.052-0.09,0.102-0.132,0.155c-0.049,0.057-0.093,0.116-0.139,0.177
+	c-0.031,0.044-0.062,0.09-0.093,0.136c-0.021,0.031-0.04,0.066-0.062,0.097c-0.116,0.192-0.219,0.395-0.304,0.612
+	c-0.104,0.272-0.179,0.564-0.222,0.873c-0.013,0.1-0.022,0.2-0.027,0.302c-0.006,0.079-0.007,0.158-0.007,0.235
+	c0,0.062,0,0.12,0.003,0.179c0.004,0.062,0.009,0.122,0.016,0.182l0.006,0.042c0.009,0.07,0.019,0.142,0.031,0.209
+	c0.008,0.027,0.012,0.056,0.019,0.082c0.011,0.058,0.024,0.113,0.039,0.17c0.02,0.073,0.041,0.143,0.062,0.212
+	c0.03,0.086,0.062,0.17,0.095,0.252c0.055,0.128,0.114,0.251,0.178,0.368c0.037,0.07,0.075,0.136,0.115,0.2
+	c0.032,0.05,0.064,0.099,0.098,0.147c0.044,0.063,0.09,0.125,0.135,0.182c0.046,0.062,0.096,0.117,0.145,0.173
+	c0.059,0.068,0.118,0.13,0.177,0.19l0.03,0.029c0.049,0.047,0.102,0.097,0.16,0.149c0.042,0.033,0.083,0.073,0.131,0.106
+	c0.044,0.033,0.087,0.07,0.134,0.104c0.058,0.037,0.116,0.08,0.18,0.12c0.065,0.043,0.137,0.086,0.211,0.129
+	c0.147,0.082,0.312,0.162,0.489,0.233c0.067,0.027,0.137,0.053,0.209,0.079c0.07,0.023,0.145,0.046,0.22,0.067
+	c0.128,0.037,0.265,0.07,0.406,0.098c0.114,0.022,0.233,0.04,0.356,0.056c0.124,0.013,0.25,0.026,0.38,0.033
+	c0.064,0.001,0.131,0.007,0.195,0.007c0.028,0.001,0.059,0.001,0.092,0.001c0.234,0,0.452-0.009,0.653-0.029l0.04-0.001
+	c0.08-0.007,0.157-0.017,0.232-0.025c0.117-0.015,0.225-0.03,0.331-0.049c0.064-0.013,0.128-0.026,0.19-0.039
+	c0.099-0.02,0.189-0.043,0.275-0.064c0.067-0.02,0.127-0.037,0.188-0.055c0.071-0.021,0.142-0.044,0.207-0.067l0.064-0.023
+	c0.03-0.012,0.074-0.027,0.125-0.046c0.068-0.026,0.148-0.06,0.241-0.099c0.056-0.023,0.113-0.05,0.176-0.077
+	c0.055-0.026,0.113-0.055,0.171-0.082c0.024-0.012,0.047-0.023,0.072-0.036v-1.435l-0.051,0.03l-0.098,0.061
+	c-0.099,0.059-0.191,0.116-0.289,0.167c-0.104,0.055-0.206,0.107-0.306,0.156c-0.18,0.082-0.349,0.154-0.513,0.215
+	c-0.313,0.11-0.601,0.182-0.855,0.227c-0.028,0.003-0.058,0.01-0.088,0.015c-0.071,0.011-0.136,0.02-0.201,0.027
+	c-0.101,0.009-0.192,0.015-0.276,0.02c-0.055,0-0.106,0.003-0.151,0.003c-0.104,0-0.208-0.003-0.315-0.011
+	c-0.124-0.007-0.252-0.021-0.381-0.043c-0.207-0.036-0.414-0.089-0.619-0.162c-0.03-0.013-0.061-0.023-0.09-0.035
+	c-0.021-0.007-0.04-0.016-0.061-0.025c-0.033-0.013-0.064-0.029-0.097-0.043c-0.07-0.033-0.143-0.069-0.208-0.106
+	c-0.034-0.023-0.068-0.042-0.104-0.062c-0.032-0.023-0.066-0.046-0.102-0.069c-0.041-0.027-0.084-0.057-0.124-0.09
+	c-0.039-0.03-0.079-0.064-0.11-0.093l-0.049-0.042l-0.024-0.023l-0.014-0.011l-0.016-0.019c-0.066-0.064-0.125-0.127-0.18-0.193
+	c-0.028-0.037-0.057-0.074-0.084-0.109c-0.027-0.036-0.05-0.073-0.074-0.108c-0.022-0.033-0.043-0.067-0.062-0.101
+	c-0.03-0.05-0.058-0.102-0.082-0.151c-0.024-0.043-0.043-0.086-0.059-0.127c-0.031-0.072-0.057-0.145-0.08-0.216
+	c-0.017-0.053-0.031-0.107-0.044-0.159c-0.04-0.15-0.059-0.288-0.069-0.403c-0.004-0.043-0.007-0.087-0.008-0.123
+	c-0.005-0.059-0.005-0.109-0.005-0.149c0-0.026,0-0.056,0.003-0.09c0.003-0.083,0.01-0.186,0.026-0.306
+	c0.01-0.071,0.025-0.147,0.044-0.228c0.013-0.054,0.028-0.11,0.046-0.166c0.016-0.05,0.033-0.1,0.053-0.156
+	c0.015-0.034,0.03-0.069,0.044-0.106c0.021-0.047,0.046-0.097,0.072-0.145c0.017-0.039,0.038-0.076,0.059-0.112
+	c0.049-0.084,0.102-0.163,0.163-0.243c0.021-0.03,0.044-0.059,0.067-0.087c0.03-0.036,0.062-0.074,0.096-0.11
+	c0.018-0.019,0.033-0.038,0.052-0.056c0.263-0.262,0.56-0.459,0.865-0.599c0.048-0.021,0.096-0.042,0.145-0.061
+	c0.049-0.019,0.098-0.036,0.145-0.055c0.056-0.016,0.109-0.031,0.163-0.047c0.049-0.016,0.101-0.025,0.15-0.039
+	c0.052-0.01,0.102-0.021,0.151-0.03c0.057-0.01,0.11-0.02,0.166-0.026c0.057-0.01,0.11-0.014,0.166-0.02
+	c0.104-0.01,0.206-0.014,0.307-0.014c0.034,0,0.067,0,0.099,0.001c0.076,0.002,0.15,0.002,0.218,0.008
+	c0.05,0.004,0.099,0.006,0.147,0.011c0.089,0.009,0.176,0.022,0.259,0.033c0.074,0.011,0.146,0.023,0.213,0.04
+	c0.104,0.019,0.197,0.042,0.282,0.063c0.055,0.013,0.104,0.029,0.151,0.043c0.07,0.02,0.129,0.039,0.175,0.054
+	c0.08,0.027,0.124,0.043,0.124,0.043c0.069,0.026,0.14,0.053,0.208,0.082c0.09,0.037,0.178,0.076,0.261,0.113
+	c0.068,0.031,0.137,0.064,0.197,0.094c0.052,0.024,0.102,0.049,0.146,0.073c0.079,0.042,0.145,0.079,0.199,0.107l0.146,0.081v-1.411
+	c0,0-0.088-0.033-0.238-0.093c-0.07-0.026-0.149-0.056-0.237-0.086c-0.051-0.019-0.104-0.039-0.159-0.059
+	c-0.045-0.012-0.09-0.03-0.139-0.046c-0.054-0.016-0.109-0.036-0.168-0.053c-0.038-0.011-0.083-0.024-0.126-0.036l-0.041-0.011
+	c-0.039-0.013-0.082-0.024-0.125-0.036c-0.051-0.014-0.102-0.025-0.157-0.04c-0.031-0.008-0.065-0.016-0.102-0.026
+	c-0.055-0.011-0.11-0.024-0.169-0.037C309.904,167.751,309.846,167.74,309.785,167.73"/>
+<path d="M295.437,172.072c0.047,0,0.096,0.001,0.142,0.002c0.053,0.001,0.104,0.009,0.156,0.013c0.08,0.007,0.162,0.017,0.239,0.031
+	c0.147,0.029,0.282,0.069,0.403,0.12c0.092,0.039,0.175,0.087,0.248,0.142c0.042,0.033,0.084,0.065,0.122,0.103
+	c0.02,0.019,0.036,0.037,0.051,0.059c0.084,0.103,0.132,0.217,0.156,0.316c0.021,0.083,0.027,0.161,0.028,0.201v0.053
+	c0,0,0,0.023-0.004,0.063c-0.004,0.096-0.03,0.266-0.136,0.432c-0.033,0.049-0.073,0.1-0.12,0.149
+	c-0.126,0.125-0.291,0.21-0.459,0.266c-0.186,0.064-0.378,0.09-0.523,0.104c-0.078,0.006-0.142,0.008-0.186,0.011
+	c-0.044,0-0.072,0.001-0.072,0.001h-1.344v-2.067H295.437z M294.138,168.924v1.963h0.651c0,0,0.044,0,0.1-0.003
+	c0.046-0.001,0.1-0.004,0.147-0.009c0.133-0.009,0.319-0.027,0.505-0.079c0.034-0.012,0.07-0.023,0.107-0.033
+	c0.143-0.053,0.283-0.131,0.391-0.236c0.087-0.083,0.143-0.178,0.18-0.269c0.049-0.112,0.063-0.219,0.07-0.296
+	c0.006-0.067,0.006-0.111,0.006-0.111s0-0.032-0.001-0.083c-0.004-0.087-0.024-0.223-0.089-0.358
+	c-0.034-0.064-0.077-0.126-0.137-0.186c-0.075-0.073-0.163-0.126-0.259-0.17c-0.183-0.08-0.391-0.111-0.568-0.123
+	c-0.077-0.007-0.147-0.007-0.208-0.007H294.138z M289.845,176.795h11.188v-10.53h-11.188V176.795z M295.241,167.741
+	c1.325,0,1.91,0.692,1.91,0.692s0.537,0.464,0.537,1.267c0,0.798-0.363,1.13-0.466,1.229c-0.219,0.221-0.504,0.352-0.504,0.352
+	s0.631,0.135,1.125,0.628c0.578,0.577,0.533,1.333,0.533,1.333s0.045,0.724-0.581,1.351c-0.769,0.767-2.161,0.728-2.161,0.728
+	h-2.854v-7.581H295.241z"/>
+<path d="M282.546,172.072c0.046,0,0.095,0.001,0.142,0.002c0.053,0.001,0.104,0.009,0.155,0.013
+	c0.083,0.007,0.162,0.017,0.239,0.031c0.15,0.029,0.284,0.069,0.404,0.12c0.091,0.039,0.176,0.087,0.249,0.142
+	c0.044,0.033,0.084,0.065,0.12,0.103c0.019,0.019,0.039,0.037,0.053,0.059c0.084,0.103,0.132,0.217,0.158,0.316
+	c0.02,0.083,0.025,0.161,0.025,0.201c0.001,0.031,0,0.053,0,0.053s0,0.023-0.001,0.063c-0.005,0.096-0.031,0.266-0.139,0.432
+	c-0.033,0.049-0.071,0.1-0.12,0.149c-0.126,0.125-0.288,0.21-0.459,0.266c-0.185,0.064-0.376,0.09-0.523,0.104
+	c-0.076,0.006-0.141,0.008-0.185,0.011c-0.044,0-0.072,0.001-0.072,0.001h-1.344v-2.067H282.546z M281.247,168.924v1.963h0.65
+	c0,0,0.043,0,0.1-0.003c0.046-0.001,0.1-0.004,0.147-0.009c0.134-0.009,0.319-0.027,0.503-0.079
+	c0.037-0.012,0.073-0.023,0.109-0.033c0.145-0.053,0.284-0.131,0.394-0.236c0.086-0.083,0.142-0.178,0.179-0.269
+	c0.047-0.112,0.062-0.219,0.07-0.296c0.006-0.067,0.004-0.111,0.004-0.111s0.001-0.032-0.001-0.083
+	c-0.004-0.087-0.021-0.223-0.089-0.358c-0.031-0.064-0.077-0.126-0.137-0.186c-0.073-0.073-0.162-0.126-0.259-0.17
+	c-0.182-0.08-0.392-0.111-0.568-0.123c-0.076-0.007-0.147-0.007-0.205-0.007H281.247z M276.954,176.795h11.188v-10.53h-11.188
+	V176.795z M282.349,167.741c1.325,0,1.912,0.692,1.912,0.692s0.535,0.464,0.535,1.267c0,0.798-0.365,1.13-0.465,1.229
+	c-0.22,0.221-0.505,0.352-0.505,0.352s0.631,0.135,1.123,0.628c0.578,0.577,0.535,1.333,0.535,1.333s0.043,0.724-0.58,1.351
+	c-0.77,0.767-2.162,0.728-2.162,0.728h-2.853v-7.581H282.349z"/>
+<g>
+	<g>
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="335.3223" y1="197.3843" x2="300.6557" y2="245.7174">
+			<stop  offset="0" style="stop-color:#02EC00"/>
+			<stop  offset="1" style="stop-color:#3EDCFD"/>
+		</linearGradient>
+		<path fill="url(#SVGID_1_)" d="M315.546,227.25c-1.263,0-2.29-1.041-2.29-2.32c0-1.262,1.027-2.289,2.29-2.289
+			c1.278,0,2.319,1.027,2.319,2.289C317.865,226.209,316.824,227.25,315.546,227.25z"/>
+	</g>
+	<g>
+		<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="315.6377" y1="183.2651" x2="280.9692" y2="231.6009">
+			<stop  offset="0" style="stop-color:#02EC00"/>
+			<stop  offset="1" style="stop-color:#3EDCFD"/>
+		</linearGradient>
+		<path fill="url(#SVGID_2_)" d="M305.47,200.207c1.529,0,2.765-1.24,2.765-2.766s-1.235-2.765-2.765-2.765
+			c-1.526,0-2.765,1.239-2.765,2.765S303.943,200.207,305.47,200.207"/>
+		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="302.2285" y1="173.6484" x2="267.5618" y2="221.9817">
+			<stop  offset="0" style="stop-color:#02EC00"/>
+			<stop  offset="1" style="stop-color:#3EDCFD"/>
+		</linearGradient>
+		<path fill="url(#SVGID_3_)" d="M285.163,194.676c-1.527,0-2.766,1.239-2.766,2.765c0,1.526,1.239,2.766,2.766,2.766
+			c1.526,0,2.764-1.24,2.764-2.766C287.927,195.915,286.688,194.676,285.163,194.676"/>
+		<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="309.0098" y1="178.5132" x2="274.3431" y2="226.8464">
+			<stop  offset="0" style="stop-color:#02EC00"/>
+			<stop  offset="1" style="stop-color:#3EDCFD"/>
+		</linearGradient>
+		<path fill="url(#SVGID_4_)" d="M285.162,189.223c-4.531,0-8.218,3.686-8.218,8.218c0,4.531,3.687,8.218,8.218,8.218h20.544
+			c4.531,0,8.217-3.687,8.217-8.218c0-4.532-3.686-8.218-8.217-8.218H285.162 M305.706,211.137h-20.544
+			c-7.552,0-13.696-6.144-13.696-13.696c0-7.552,6.144-13.696,13.696-13.696h20.544c7.552,0,13.696,6.144,13.696,13.696
+			C319.402,204.993,313.258,211.137,305.706,211.137"/>
+	</g>
+	<g>
+		<g>
+			<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="295.2314" y1="168.6294" x2="260.5644" y2="216.9632">
+				<stop  offset="0" style="stop-color:#02EC00"/>
+				<stop  offset="1" style="stop-color:#3EDCFD"/>
+			</linearGradient>
+			<path fill="url(#SVGID_5_)" d="M259.797,238.765h-3.315v-9.256c0-2.066-1.176-3.566-2.796-3.566
+				c-1.665,0-2.827,1.467-2.827,3.566v9.256h-3.347v-9.256c0-2.342-1.422-3.566-2.827-3.566c-1.665,0-2.827,1.467-2.827,3.566v9.256
+				h-3.314v-9.102c0-4.143,2.525-7.036,6.142-7.036c1.717,0,3.183,0.705,4.46,2.149c1.223-1.409,2.778-2.149,4.541-2.149
+				c3.598,0,6.111,2.894,6.111,7.036V238.765z"/>
+		</g>
+		<g>
+			<linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="302.834" y1="174.0815" x2="268.1667" y2="222.4156">
+				<stop  offset="0" style="stop-color:#02EC00"/>
+				<stop  offset="1" style="stop-color:#3EDCFD"/>
+			</linearGradient>
+			<path fill="url(#SVGID_6_)" d="M265.844,238.765h-3.346v-15.736h3.346V238.765z M264.171,220.738
+				c-1.198,0-2.136-0.952-2.136-2.167c0-1.217,0.918-2.135,2.136-2.135c1.214,0,2.166,0.938,2.166,2.135
+				C266.337,219.766,265.366,220.738,264.171,220.738z"/>
+		</g>
+		<g>
+			<linearGradient id="SVGID_7_" gradientUnits="userSpaceOnUse" x1="312.3691" y1="180.9229" x2="277.7027" y2="229.2558">
+				<stop  offset="0" style="stop-color:#02EC00"/>
+				<stop  offset="1" style="stop-color:#3EDCFD"/>
+			</linearGradient>
+			<path fill="url(#SVGID_7_)" d="M276.458,239.166c-2.169,0-4.21-0.866-5.748-2.438c-1.505-1.504-2.336-3.577-2.336-5.83
+				c0-2.254,0.832-4.327,2.341-5.837c1.511-1.544,3.606-2.433,5.743-2.433c2.353,0,4.318,0.789,5.841,2.346l0.428,0.438
+				l-2.389,2.437l-0.445-0.4c-1.132-1.019-2.192-1.473-3.436-1.473c-2.663,0-4.83,2.208-4.83,4.923c0,2.731,2.167,4.954,4.83,4.954
+				c1.254,0,2.344-0.467,3.43-1.468l0.428-0.396l2.459,2.312l-0.502,0.454C280.505,238.354,278.549,239.166,276.458,239.166z"/>
+		</g>
+		<g>
+			<linearGradient id="SVGID_8_" gradientUnits="userSpaceOnUse" x1="320.2295" y1="186.5586" x2="285.562" y2="234.893">
+				<stop  offset="0" style="stop-color:#02EC00"/>
+				<stop  offset="1" style="stop-color:#3EDCFD"/>
+			</linearGradient>
+			<path fill="url(#SVGID_8_)" d="M288.575,238.765h-3.53v-7.868c0-5.047,2.183-7.473,7.078-7.866l0.675-0.055v3.302l-0.556,0.062
+				c-2.673,0.298-3.667,1.482-3.667,4.372V238.765z"/>
+		</g>
+		<g>
+			<linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="329.1748" y1="192.9761" x2="294.5082" y2="241.3092">
+				<stop  offset="0" style="stop-color:#02EC00"/>
+				<stop  offset="1" style="stop-color:#3EDCFD"/>
+			</linearGradient>
+			<path fill="url(#SVGID_9_)" d="M301.988,239.166c-2.169,0-4.21-0.866-5.749-2.438c-1.526-1.56-2.367-3.63-2.367-5.831
+				s0.84-4.271,2.367-5.832c1.54-1.571,3.581-2.438,5.749-2.438c2.147,0,4.178,0.866,5.718,2.438
+				c1.524,1.524,2.366,3.598,2.366,5.832c0,2.233-0.842,4.307-2.371,5.836C306.168,238.299,304.137,239.166,301.988,239.166z
+				 M301.957,225.943c-2.562,0-4.646,2.223-4.646,4.954c0,2.715,2.084,4.923,4.646,4.923c2.623,0,4.677-2.162,4.677-4.923
+				C306.634,228.166,304.536,225.943,301.957,225.943z"/>
+		</g>
+		<g>
+			<linearGradient id="SVGID_10_" gradientUnits="userSpaceOnUse" x1="340.7803" y1="201.3013" x2="306.115" y2="249.6326">
+				<stop  offset="0" style="stop-color:#02EC00"/>
+				<stop  offset="1" style="stop-color:#3EDCFD"/>
+			</linearGradient>
+			<path fill="url(#SVGID_10_)" d="M315.546,238.765c-1.263,0-2.29-1.027-2.29-2.289c0-1.279,1.027-2.32,2.29-2.32
+				c1.278,0,2.319,1.041,2.319,2.32C317.865,237.738,316.824,238.765,315.546,238.765z"/>
+		</g>
+		<g>
+			<linearGradient id="SVGID_11_" gradientUnits="userSpaceOnUse" x1="344.0957" y1="203.6792" x2="309.4302" y2="252.0108">
+				<stop  offset="0" style="stop-color:#02EC00"/>
+				<stop  offset="1" style="stop-color:#3EDCFD"/>
+			</linearGradient>
+			<path fill="url(#SVGID_11_)" d="M329.108,239.166c-4.777,0-8.114-3.717-8.114-9.039c0-0.326,0.001-0.684,0.033-1.042
+				l-0.003-13.546h3.315v8.64c1.431-1.021,3.002-1.52,4.769-1.52c2.169,0,4.199,0.854,5.718,2.406
+				c1.526,1.561,2.366,3.631,2.366,5.832c0,2.233-0.842,4.307-2.371,5.836C333.289,238.299,331.259,239.166,329.108,239.166z
+				 M329.108,225.974c-2.663,0-4.83,2.222-4.83,4.953c0,2.761,2.122,4.924,4.83,4.924c2.664,0,4.831-2.209,4.831-4.924
+				C333.939,228.196,331.772,225.974,329.108,225.974z"/>
+		</g>
+		<g>
+			<linearGradient id="SVGID_12_" gradientUnits="userSpaceOnUse" x1="354.0469" y1="210.8149" x2="319.3796" y2="259.149">
+				<stop  offset="0" style="stop-color:#02EC00"/>
+				<stop  offset="1" style="stop-color:#3EDCFD"/>
+			</linearGradient>
+			<path fill="url(#SVGID_12_)" d="M343.403,238.765h-3.346v-15.736h3.346V238.765z M341.73,220.738
+				c-1.197,0-2.136-0.952-2.136-2.167c0-1.217,0.918-2.135,2.136-2.135c1.215,0,2.166,0.938,2.166,2.135
+				C343.896,219.766,342.925,220.738,341.73,220.738z"/>
+		</g>
+		<g>
+			<linearGradient id="SVGID_13_" gradientUnits="userSpaceOnUse" x1="361.6562" y1="216.2729" x2="326.9895" y2="264.6063">
+				<stop  offset="0" style="stop-color:#02EC00"/>
+				<stop  offset="1" style="stop-color:#3EDCFD"/>
+			</linearGradient>
+			<path fill="url(#SVGID_13_)" d="M355.923,239.237l-0.743-0.145c-4.932-0.954-6.765-3.317-6.765-8.72v-3.937h-1.448v-3.191h1.448
+				v-3.483h3.377v3.483h4.131v3.191h-4.131v4.461c0,2.947,1.108,4.42,3.595,4.774l0.536,0.077V239.237z"/>
+		</g>
+	</g>
+</g>
+</svg>
+  
+<div id="loadingDot" style="font-size: 18px;margin-top:-10px"><a style="color:inherit;cursor:pointer;" href="/faq">we need JavaScript and cookies enabled</a></div>
+<div id='progressContainer' style='margin-top:20px;height:3px;width:100%; background:#eee;'>
+<div id='progressBar' style='height:3px; width:0px; background:#81e774'></div>
+</div>
+<div style="margin-top: 1em; font-size:12px;" id="statusMsg"></div>
+</div>
+<div id='scriptHolder'></div>
+<script type="text/javascript">
+// these are used in the included JS files
+var browsersUrl = "/app/browsers.html?releaseid=2519290278553570000-91baaa6b.5ca0.4b05.756e.b7c82c39ffb3-bbcmicrobitacc82735";
+var errorUrl = "/app/error.html?releaseid=2519290278553570000-91baaa6b.5ca0.4b05.756e.b7c82c39ffb3-bbcmicrobitacc82735";
+var mainJsName = "https://az742082.vo.msecnd.net/app/2519290278553570000-91baaa6b.5ca0.4b05.756e.b7c82c39ffb3-bbcmicrobitacc82735/c/main.js";
+var betaFriendlyId = "";
+var localProxy = "";
+var tdVersion = "0.0.2250.2635";
+var tdConfig = {
+  "workspaceUrl": "",
+  "searchUrl": "https://microbit.search.windows.net",
+  "searchApiKey": "361514D82A534850D90AFC9361F99DE8",
+  "apiUrl": "https://www.microbit.co.uk/api",
+  "rootUrl": "https://www.microbit.co.uk",
+  "liteVersion": "0.0.r236",
+  "tdVersion": "0.0.2250.2635",
+  "releaseid": "2519290278553570000-91baaa6b.5ca0.4b05.756e.b7c82c39ffb3-bbcmicrobitacc82735",
+  "relid": "bsvdu",
+  "releaseLabel": "current",
+  "shareUrl": "https://www.microbit.co.uk",
+  "cdnUrl": "https://microbit0.blob.core.windows.net",
+  "anonToken": "",
+  "primaryCdnUrl": "https://az742082.vo.msecnd.net",
+  "altCdnUrls": [
+    "https://microbit0.blob.core.windows.net",
+    "https://az742082.vo.msecnd.net"
+  ],
+  "tickFilter": {
+    "coreRun": 1,
+    "calcEdit": 1,
+    "browseEdit": 1,
+    "codeCompile": 1,
+    "browseUninstall": 1,
+    "NewScript_blockly": 1,
+    "NewScript_touchdevelop": 1,
+    "NewScript_codekingdoms": 1,
+    "NewScript_python": 1,
+    "browseRunInstall": 1,
+    "browseEditInstall": 1,
+    "browseSave": 1,
+    "browseClone": 1,
+    "coreNativeCompile": 1,
+    "externalCompile": 1,
+    "externalRun": 1,
+    "siteMenuHome": 1,
+    "siteMenuHelp": 1,
+    "siteMenuMyScripts": 1,
+    "editor_shell_mobile": 1,
+    "editor_blockly_mobile": 1,
+    "editor_codekingdoms_mobile": 1,
+    "editor_python_mobile": 1,
+    "editor_touchdevelop_mobile": 1,
+    "editor_shell": 1,
+    "editor_blockly": 1,
+    "editor_codekingdoms": 1,
+    "editor_python": 1,
+    "editor_touchdevelop": 1,
+    "mainInit": 1
+  },
+  "cloudId": "microbit.co.uk"
+};
+var tdlite = "url";
+var rootUrl = "https://www.touchdevelop.com";
+var TDev;
+
+if (window.localStorage &&
+    window.localStorage.always_beta === "yes" &&
+    !betaFriendlyId &&
+    window.location.pathname === "/app/")
+{
+  window.location.pathname = "/app/beta";
+}  
+
+(function() {
+  var e = document.getElementById("loadingDot");
+  if (e) {
+    e.innerHTML = 'just a moment';
+  }
+}());
+(function() {
+  var ratio = 0.97
+  var curr = 100 / (1 / (1 - ratio))
+  var sum = 0
+  function updatePbar() {
+    var pbar = document.getElementById("progressBar");
+    if (!pbar) return;
+    sum += curr
+    curr *= ratio
+    pbar.style.width = sum + "%"
+    setTimeout(updatePbar, 200)
+  }
+  updatePbar();
+}());
+function statusMsg(m) {
+  if (/debugMsg/.test(document.URL)) {
+    var e = document.getElementById("statusMsg");
+    if (e) e.innerHTML = m;
+  }
+}
+var TDev;
+statusMsg("js initialized");
+
+</script>
+<style type="text/css">
+    @import url("https://az742082.vo.msecnd.net/app/2519290278553570000-91baaa6b.5ca0.4b05.756e.b7c82c39ffb3-bbcmicrobitacc82735/c/default.css");
+    @import url("https://az742082.vo.msecnd.net/app/2519290278553570000-91baaa6b.5ca0.4b05.756e.b7c82c39ffb3-bbcmicrobitacc82735/c/editor.css");
+</style>
+<script type="text/javascript"> statusMsg("css imported"); </script>
+<script src="https://az742082.vo.msecnd.net/app/2519290278553570000-91baaa6b.5ca0.4b05.756e.b7c82c39ffb3-bbcmicrobitacc82735/c/external/lzma_worker-min.js" type="text/javascript"></script>
+<script>
+  window.bbcMicrobit = true;
+</script>
+<script src="https://az742082.vo.msecnd.net/app/2519290278553570000-91baaa6b.5ca0.4b05.756e.b7c82c39ffb3-bbcmicrobitacc82735/c/browser.js" type="text/javascript"></script>
+<script type="text/javascript">
+statusMsg("browser detector loaded");
+TDev.Browser.check(true, "BBC micro:bit", "https://www.microbit.co.uk/");
+statusMsg("browser detector finished");
+</script>
+<script id='mainScript' src="https://az742082.vo.msecnd.net/app/2519290278553570000-91baaa6b.5ca0.4b05.756e.b7c82c39ffb3-bbcmicrobitacc82735/c/main.js" type="text/javascript"></script>
+<script src="https://az742082.vo.msecnd.net/app/2519290278553570000-91baaa6b.5ca0.4b05.756e.b7c82c39ffb3-bbcmicrobitacc82735/c/libraries.js" type="text/javascript"></script>
+<script>
+  var logoSvg = "data:image/png;base64,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";
+  TDev.Runtime.companyCopyright = "BBC micro:bit";
+  TDev.Runtime.appName = "BBC micro:bit";
+  TDev.Runtime.notificationIcon = "https://az742082.vo.msecnd.net/files/icons/micro-bit_primary_colour_114x114.png";
+  TDev.Runtime.accelerometerTiltBooster = 10;
+  TDev.Runtime.legalNoticeHeader = 		
+  '<img src="' + logoSvg +'" style="margin-left:auto;margin-right:auto;display:block;" alt="BBC micro:bit logo" />'+
+  '<h4>Cookies on this website</h4>';
+  TDev.Runtime.legalButton = "continue";
+  TDev.Runtime.legalNotice = 
+  "<div style='font-size:0.7em'>We use technologies that collect information from your computer on your use of " +
+  "the BBC micro:bit website called ‘cookies’ to ensure that we give you the best " +
+  "experience on our website.<br/><br/>" +
+  "When you start programming in an editor, we will store your programs on your  " +
+  "computer so that you can continue to work on them offline.<br/><br/>" +
+  "If you continue without changing your settings, we'll assume that you are happy " +
+  "to receive all cookies on this website. However, if you would like to, you  " +
+  "<a href='/cookies/manage'>can change your cookie settings</a> " +
+  "at any time.</div>\n";
+
+  //"</br><a href='http://policy.pilots.bbcconnectedstudio.co.uk/cookies.html'>find out more...</a>";
+  
+  TDev.Cloud.config.tutorialAvatarArtId = 'lqakekjj';
+  TDev.Cloud.config.hashtag = '#microbit';
+  TDev.Cloud.config.printHeaderHtml = '<div><img src="' + logoSvg + '" alt="BBC micro:bit"></div>';  
+  TDev.Cloud.config.companyLogoHorizontalUrl = logoSvg;
+  TDev.Cloud.config.touchDevelopLogoUrl = "https://az742082.vo.msecnd.net/pub/rntqmpqu";
+  TDev.Cloud.config.helpPath = "/td/contents";
+  TDev.Cloud.config.primaryLocale = "en-GB";
+  TDev.Cloud.config.cloudId = "microbit.co.uk";
+  TDev.Cloud.config.uploader = "/software-tools";
+  TDev.Cloud.config.specHelpPaths = {
+        math: "/td/math",
+        // also possible for specific functions:
+        // "mathround": "/td/math/round",
+        bits: "/td/bits",
+        "if": "/td/if",
+        "for": "/td/for",
+        "while": "/td/while",
+        "return": "/td/return",
+        "string": "/td/string-functions",
+        "createcollectionof": "/td/collections",
+
+  };
+  TDev.Cloud.config.topicPath = "/td/";
+  TDev.Cloud.config.legalButtons = [ 
+    { name: TDev.lf("Terms of use"), url: "/terms-of-use" },
+    { name: TDev.lf("Privacy policy"), url: "/privacy"},
+    { name: TDev.lf("Partners"), url: "/partners"},
+    { name: TDev.lf("House rules"), url: "/house-rules"},
+  ];
+  TDev.Cloud.config.doNothingText = "add code here";
+  TDev.Cloud.config.hintLevel = "semi";
+  TDev.Cloud.config.userVoice = "";
+  TDev.Cloud.config.translateCdnUrl = "";
+  TDev.Cloud.config.translateApiUrl = "";
+</script>
+</div>
+</body>
+</html>

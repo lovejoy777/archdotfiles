@@ -1,0 +1,18 @@
+/* Important tags are needed to prevent collisions with the 3rd party document */
+#Mindspark_defaultSearchContainer,
+#Mindspark_defaultSearchModal,
+#Mindspark_defaultSearchModalBackground
+{
+    width: 100% !important;
+    height: 100% !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 2147483647 !important;
+}
+
+#Mindspark_defaultSearchModalBackground {
+    background: #444 !important;
+    opacity: .5 !important;
+    z-index: 2147483646 !important;
+}

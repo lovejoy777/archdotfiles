@@ -1,0 +1,519 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <!-- saved from url=(0050)http://www.mywebface.com/menus/widgets/rss-widget/ -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>RSS</title>
+
+	<script type="text/javascript" src="../common/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="../common/underscore-1.3.1.min.js"></script>
+	<!-- Platform-specific API implementation -->
+    <script type="text/javascript" src="../../widget-context-1.0.js"></script>
+    <!-- Optional file for platform-specific customization -->
+    <script type="text/javascript" src="../../custom/rss-custom.js"></script>
+    <!-- Shared RSS widget includes -->
+	<script type="text/javascript" src="js/rss-widget-parse.js"></script>
+	<script type="text/javascript" src="../common/list-interaction.js"></script>
+	<script type="text/javascript" src="../common/eventListening.js"></script>
+	<script type="text/javascript" src="js/rss-widget.js"></script>
+	<script type="text/javascript" src="js/rss-widget-custom.js"></script>
+	<style type="text/css">
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+	font-family: Tahoma, sans-serif;
+	font-size: 14px;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.transparent {
+	visibility: hidden;
+}
+
+/* Title. */
+#title {
+	position: relative;
+	border-left: 1px solid #FFF;
+    border-bottom: 1px solid #CE0B0B;
+    height: 32px;
+}
+
+/* The title is not visible in menu mode. */
+.menu-layout #title {
+	display: none;
+}
+
+#title-icon {
+	position: absolute;
+    top: 7px;
+	left: 7px;
+}
+
+#title h1 {
+	color: #CE0B0B;
+	font-size: 15px;
+	margin: 7px 0 7px 30px;
+	padding: 0;
+	font-weight: bold;
+	display: inline-block;
+}
+
+* html #title h1 {
+	display: inline;
+}
+
+#title #close-button {
+    cursor: pointer;
+	position: absolute;
+	top: 7px;
+	right: 12px;
+	background-image: url('http://ak.imgfarm.com/images/toolbar/filmfan/btn_close_red.png');
+	background-position: 0 0;
+	width: 20px;
+	height: 19px;
+}
+
+#title #close-button:hover {
+	background-position: 0 19px;
+}
+
+/* Body. */
+#body {
+    width: 700px;
+    height: 350px;
+}
+
+/* Tabs. */
+#tabs {
+	float: left;
+	width: 162px;
+	height: 315px;
+	border-right: 1px dotted #CE0B0B;
+	position: relative;
+}
+
+.menu-layout #tabs {
+	display: none;
+}
+
+.tab {
+	color: #333;
+	position: relative;
+	border: 1px dotted #FFF;
+    border-bottom: 1px dotted #CE0B0B;
+    padding: 7px 3px 7px 30px;
+    cursor: pointer;
+}
+
+.tab img {
+	position: absolute;
+	top: 8px;
+	left: 7px;
+}
+
+* html .tab img {
+	left: -22px;
+}
+
+#tabs .selected {
+	color: white;
+}
+
+#tabs .selected, .tab:hover, #tabs .hover {
+    background-image: url('http://ak.imgfarm.com/images/toolbar/filmfan/tab_bg_red2.png');
+}
+
+/* "Powered by" elements (inside tabs, inside title). */
+#title-powered-by {
+	display: inline-block;
+}
+
+#title-powered-by a {
+    text-decoration: none;
+}
+
+#title-powered-by a:hover {
+    text-decoration: underline;
+}
+
+* html #title-powered-by {
+	display: inline;
+	vertical-align: middle;
+	margin-left: 10px;
+}
+
+#tabs-powered-by {
+	text-align: center;
+	width: 162px;
+	position: absolute;
+	bottom: 7px;
+}
+
+#tabs-powered-by-img {
+	cursor: pointer;
+}
+
+.powered-by, .powered-by a {
+    font-size: 10px;
+    color: #999;
+}
+
+/* Icons. */
+#title-icon, .tab img {
+    width: 16px;
+    height: 16px;
+    border: none;
+}
+
+/* Content. */
+#content {
+	float: left;
+	width: 514px;
+	height: 300px;
+	margin: 10px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.menu-layout #content {
+	margin: 0;
+	width: 700px;
+	height: 350px;
+	overflow-y: hidden;
+}
+
+* html #content {
+	margin-right: 5px; /* Use half the margin because of a double margin bug in IE6. */
+}
+
+.even {
+	background-color: #F5F5F5;
+}
+
+#rss-content table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.menu-layout #rss-content table {
+	table-layout: fixed;
+}
+
+/*
+    In menu layout mode, thumbnails are not supported because
+    table-layout: fixed messes up the rendering otherwise.
+
+    You may get rid of table-layout: fixed on the table, at the cost of losing
+    the ellipsis inside tds. Or, at the cost of implementing custom ellipsis.
+    Or, getting rid of the table (good luck with the layout).
+
+    Friggin' table layout.
+*/
+.menu-layout .item .thumbnail-cell {
+	display: none !important;
+}
+
+#rss-content table, #rss-content tbody, #rss-content tr, #rss-content td {
+	zoom: 1;
+    margin: 0;
+	padding: 0;
+}
+
+#rss-content tr {
+	display: block;
+    min-height: 15px;
+}
+
+.item {
+    clear: both;
+    margin: 5px 0;
+}
+
+/* Text does not wrap when using a menu layout. */
+.menu-layout .item .content-cell a {
+    cursor: default;
+}
+
+.menu-layout .item .content {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+.item .thumbnail-cell {
+    display: none;
+}
+
+/* Show the thumbnail if in full or thumbnail mode. */
+.full-display-mode .item .thumbnail-cell,
+.gallery-display-mode .item .thumbnail-cell,
+.thumbnail-display-mode .item .thumbnail-cell {
+	display: table-cell;
+}
+
+.no-thumbnails .item .thumbnail-cell {
+    display: none;
+}
+
+.thumbnail {
+    border-width: 3px;
+    border-style: double;
+    border-color: #999;
+    vertical-align: middle;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.item .content-cell {
+	width: 100%;
+	padding: 5px;
+	display: none;
+}
+
+/* Show the content if in full, text or title mode. */
+.full-display-mode .item .content-cell,
+.text-display-mode .item .content-cell,
+.gallery-display-mode .item .content-cell,
+.title-display-mode .item .content-cell {
+    display: table-cell;
+}
+
+.item .content {
+    margin: 5px 10px;
+    vertical-align: middle;
+}
+
+.item .title {
+	color: #CE0B0B;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.item .title:hover {
+	color: #666;
+	text-decoration: underline;
+}
+
+.item .description {
+	color: #666;
+    font-size: 11px;
+    display: none;
+}
+
+.menu-layout .item .title {
+    color: #000;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.menu-layout .item .title:hover {
+    color: #FFF;
+    text-decoration: none;
+}
+
+/* Show the description if in full or text mode. */
+.full-display-mode .item .description,
+.text-display-mode .item .description {
+    display: block;
+}
+
+/* List interaction. */
+.active-list-item {
+	background-color: #CE0B0B;
+}
+
+.menu-layout .active-list-item {
+    background-color: #555;
+}
+
+.menu-layout .active-list-item .title {
+    color: #FFF;
+}
+
+.active-list-item .title {
+	color: #FFF;
+}
+
+/* Youtube widget */
+.floatLeft{ float:Left;}
+
+.floatRight{ float:Right;}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+.videoBlock{
+
+	width:152px;
+
+	height:170px;
+
+	margin-left:10px;
+
+}
+
+.gallery {
+	height: 144px;
+	width: 123px;
+}
+
+.gallery .thumbnail {
+	margin: 3px;
+}
+
+.feedTitle {
+	text-align: center;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.feedTitle a {
+	color: #CE0B0B;
+}
+
+.videoTitle{
+
+	width:120px;
+
+	border-width:0px;
+
+	border-style:solid;
+
+	height: 28px;
+
+	font-family: tahoma, sans-serif;
+
+	font-size:13px;
+
+	line-height:13px;
+
+	font-weight:bold;
+
+	overflow:hidden;
+
+	color:#ce0b0b;
+
+	margin-top:3px;
+
+	/*text-align:top;*/
+
+}
+
+.videoTitle a{color:#ce0b0b;font-family:tahoma, sans-serif;font-size:11px;text-decoration: none;}
+
+.videoTitle a:hover{text-decoration:underline;}
+
+.videoThumbnail{
+
+	border-width:3px;
+
+	border-style:double;
+
+	border-color:#999999;
+
+	width:120px;
+
+	height:90px;
+
+}
+
+.videoThumbnailDiv{
+
+	border-width:0px;
+
+	border-style:solid;
+
+	width:124px;
+
+	height:92px;
+
+}
+
+.videoViewCounts{
+
+	width:100%;
+
+	height:14px;
+
+	font-family: tahoma,sans-serif;
+
+	font-size:12px;
+
+	color:#333333;
+
+	overflow:hidden;
+
+}
+
+.videoAuthor a{
+
+	font-family: tahoma,sans-serif ;
+
+	font-size:12px;
+
+	overflow:hidden;
+
+	color:#0066ca;
+
+	height:14px;
+
+	overflow:hidden;
+
+	font-weight:normal;
+
+	text-decoration:none;
+
+}
+
+.videoAuthor a:hover{text-decoration:underline;}
+
+</style>
+
+	</head>
+	<body>
+		<div id="title">
+			<img id="title-icon" />
+			<h1 id="title-text">RSS</h1>
+			<div id="title-powered-by" class="powered-by">
+	        by <a id="title-powered-by-anchor" href="#" shape="rect"></a></div>
+
+			<div id="close-button"></div>
+		</div>
+		<div id="body">
+			<div id="tabs">
+				<div id="tabs-powered-by" class="powered-by">
+					<div id="tabs-powered-by-img"></div>
+					Powered by <a id="tabs-powered-by-anchor" href="#" shape="rect"></a>
+				</div>
+			</div>
+			<div id="content"></div>
+
+			<div class="hidden">
+				<div id="rss-content"></div>
+				<div id="spinner">Loading...</div>
+				<div id="error">Error.</div>
+				<div id="incomplete-process-message">Process is incomplete.</div>
+			</div>
+		</div>
+
+	</body>
+</html>

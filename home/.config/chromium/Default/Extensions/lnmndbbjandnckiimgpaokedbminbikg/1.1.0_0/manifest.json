@@ -1,0 +1,19 @@
+{
+   "background_page": "background.html",
+   "browser_action": {
+      "default_icon": "Contacts-ICS-64.png",
+      "default_title": "Quick Contacts"
+   },
+   "description": "Loads Google Contact Manager for a quick and easy access.",
+   "icons": {
+      "128": "Contacts-ICS-128.png",
+      "32": "Contacts-ICS-32.png",
+      "48": "Contacts-ICS-48.png",
+      "64": "Contacts-ICS-64.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDPTzIUq9WWNgBCOpoCjaoG8JulHAGfsR7foR6YYqyzUrhJXeHCEhkz87PuYh2eHWvH43WoXGkQj3g3w8TNGXu4BXgr8S7QHvurKDsAxLmWA2HByXupw447LD5tnvBrhtuDzrLpw8N8u4JG7mEd+aNuN/11OGD7FYFdxVCsbIMQGQIDAQAB",
+   "name": "Quick Contacts",
+   "permissions": [ "tabs" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.1.0"
+}

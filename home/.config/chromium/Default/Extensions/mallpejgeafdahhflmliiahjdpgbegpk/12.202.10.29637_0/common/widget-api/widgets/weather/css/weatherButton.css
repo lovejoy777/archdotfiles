@@ -1,0 +1,316 @@
+body {
+	background-repeat: no-repeat;
+	width: 620px;
+	height: 275px;
+	overflow: hidden;
+}
+
+.space_1 {
+	width: 10px;
+	height: 180px;
+	border-width: 0px;
+}
+
+.space_2 {
+	width: 7px;
+	height: 180px;
+	border-width: 0px;
+}
+
+.currentblock {
+	width: 180px;
+	height: 180px;
+	text-align: left;
+	margin-left: 2px;
+	border-width: 0px; /*background:#FF0223;*/
+}
+
+.block {
+	width: 94px;
+	height: 180px;
+	text-align: center; /*background:#FF00DD;*/
+	border-width: 0px;
+}
+
+.currentImg {
+	width: 140px;
+	height: 140px;
+}
+
+.currentTemp {
+	font-family: Franklin Gothic Medium, Arial;
+	font-weight: bold;
+	font-size: 30px;
+	color: #339933;
+	margin-top: 15px;
+	margin-left: 2px;
+}
+
+.currentCondition {
+	font-family: Franklin Gothic Medium, Arial;
+	font-weight: bold;
+	font-size: 14px;
+	color: #1363ad;
+	margin-left: 2px;
+}
+
+.mainContent {
+	width: 620px;
+	height: 275px;
+	overflow: visible;
+	margin: 0;
+}
+
+.mainTitle {
+	font-family: Franklin Gothic Medium, Arial;
+	font-weight: bold;
+	font-size: 18px;
+	color: #1363ad;
+	width: 260px;
+}
+
+.weatherCondition {
+	font-family: Arial;
+	font-size: 12px;
+	color: #333333;
+}
+
+.weekDay {
+/*background:#339933;*/
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 12px;
+	color: #333333;
+	height: 30px;
+	width: 100%;
+}
+
+.lowTemp {
+	font-family: Franklin Gothic Medium, Arial;
+	font-size: 18px;
+	font-weight: bold;
+	color: #1363ad;
+	height: 30px;
+	width: 100%;
+}
+
+.highTemp {
+	font-family: Franklin Gothic Medium, Arial;
+	font-size: 18px;
+	font-weight: bold;
+	color: #ff9933;
+	width: 100%;
+}
+
+.windChill {
+	font-size: 12px;
+	color: #666666;
+}
+
+.topbar {
+	width: 100%;
+	height: 21px;
+}
+
+.logo {
+	width: 20px;
+	height: 20px;
+	display: block;
+	background: url('http://ak.imgfarm.com/images/widgets/weather/icon_weather.png') no-repeat;
+}
+
+.closeBtn {
+	cursor: pointer;
+	width: 20px;
+	height: 19px;
+    background-image: url('http://ak.imgfarm.com/images/toolbar/filmfan/btn_close_red.png');
+    background-position: 0 0;
+}
+
+.closeBtn:hover {
+	background-position: 0 -20px;
+}
+
+.windowTitle {
+	width: 560px;
+	font-family: Franklin Gothic Medium, Arial;
+	font-size: 18px;
+	font-weight: bold;
+	color: #1363ad;
+	margin-top: -2px;
+}
+
+.bottombar {
+	margin-top: -65px;
+	width: 590px;
+	text-align: right;
+}
+
+#locationSettings {
+	background-color: #FFFFFF;
+	filter: alpha(opacity = 70);
+	opacity: 0.7;
+	width: 620px;
+	height: 275px;
+	position: absolute;
+	top: 7px;
+	left: 9px;
+	display: none;
+}
+
+#settingsMainContent {
+	width: 300px;
+	height: 225px;
+	position: absolute;
+	top: 35px;
+	left: 160px;
+	border-color: #AAAAAA;
+	border-style: solid;
+	border-width: 1px;
+	background-color: #FFFFFF;
+	filter: alpha(opacity = 100);
+	opacity: 1.0;
+	display: none;
+}
+
+.sline {
+	color: #1363ad;
+	background: #1363ad;
+	height: 1px;
+	border-width: 0px;
+	border-style: solid;
+	border-color: #1363ad;
+}
+
+.subTitle {
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 14px;
+	color: #333333;
+}
+
+#searchBtn {
+	width: 30px;
+	height: 25px;
+	background: url('http://ak.imgfarm.com/images/toolbar/btn2/global/btn_search.png') no-repeat;
+	border: 0px solid;
+	margin-left: -8px;
+	cursor: pointer;
+}
+
+#searchBtn:hover {
+	background-position: 0 -25px;
+}
+
+#saveBtn {
+	width: 88px;
+	height: 30px;
+	background: url('http://ak.imgfarm.com/images/toolbar/btn2/global/btn_save.png') no-repeat;
+	border: 0px solid;
+	cursor: pointer;
+
+}
+
+#saveBtn:hover {
+	background-position: 0 -30px;
+}
+
+#cancelBtn {
+	width: 88px;
+	height: 30px;
+	background: url('http://ak.imgfarm.com/images/toolbar/btn2/global/btn_cancel.png') no-repeat;
+	border: 0px solid;
+	cursor: pointer;
+}
+
+#cancelBtn:hover {
+	background-position: 0 -30px;
+}
+
+.inputBtns {
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
+}
+
+#currentLocation {
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	color: #1363ad;
+}
+
+#searchStatus {
+	background-color: #d6eeff;
+	width: 100%;
+	height: 40px;
+	margin-top: 5px;
+	font-family: Arial;
+	font-size: 12px;
+	padding-left: 5px;
+	padding-top: 5px;
+}
+
+.statusTitle {
+	font-weight: bold;
+	color: #1363ad;
+}
+
+.statusLocation {
+	font-weight: bold;
+	color: #ff6600;
+}
+
+.statusTips {
+	color: #333333;
+}
+
+.statusError {
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+#changeLocationBtn, #locationDetailsBtn {
+	font-family: Arial;
+	font-size: 12px;
+	color: #ff9933;
+}
+
+#location {
+	width: 245px;
+	height: 19px;
+	border: 2px solid;
+	border-color: #1363ad;
+	color: #339933;
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.radioBtn {
+	font-family: Arial;
+	font-size: 12px;
+	color: #333333;
+}
+
+.floatLeft {
+	float: Left;
+}
+
+.floatRight {
+	float: Right;
+}
+
+#attribution {
+    font-family: Franklin Gothic Medium, sans-serif;
+    position: absolute;
+    bottom: 6px;
+    left: 12px;
+    font-size: 9px;
+}
+
+#attribution a {
+    text-decoration: underline;
+    color: #F93;
+    cursor: pointer;
+}

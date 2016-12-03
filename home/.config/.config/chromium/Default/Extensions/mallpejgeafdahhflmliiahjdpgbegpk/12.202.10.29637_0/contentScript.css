@@ -1,0 +1,61 @@
+.Mindspark_-iframeMyWebSearchToolbar {
+    -webkit-transition: opacity .15s ease-in;
+	width: 100% !important;
+    min-height: 30px !important;
+    max-height: 30px !important;
+    height: 30px !important;
+	padding: 0 !important;
+    margin: 0 !important;
+	background-color: #e4e4e4;
+	border: none !important;
+	position: fixed !important;
+	top: 0;
+	left: 0 !important;
+	z-index: 2147483647 !important;
+    overflow: hidden;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 0;
+}
+
+.Mindspark_-iframePartOfPage{
+    top: 2px;
+    min-height: 32px !important;
+    max-height: 32px !important;
+    height: 32px !important;
+}
+
+@media print {
+    .Mindspark_-iframeMyWebSearchToolbar {
+        display: none !important;
+    }
+}
+
+.Mindspark_-dialog {
+    position: fixed;
+    z-index: 2147483648;
+    background-color: #fff;
+    border: 1px solid #CCC;
+    /* Size and position to be set dynamically. */
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.Mindspark_-dialog-transparent {
+    position: fixed;
+    z-index: 2147483648;
+	background: transparent;
+	border: 0;
+}
+
+.Mindspark_-modal-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	background-color: #666;
+	opacity: .4;
+	-moz-opacity: .4;
+	filter: alpha(opacity=40);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+	-khtml-opacity: .4;
+}

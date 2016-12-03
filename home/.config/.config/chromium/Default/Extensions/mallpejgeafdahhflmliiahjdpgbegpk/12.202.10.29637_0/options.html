@@ -1,0 +1,91 @@
+<html>
+<head>
+	<title>FromDocToPDF Options</title>
+	<style type="text/css">
+		body {
+			font-family: arial, sans-serif;
+			margin:10px;
+			background: #EBEFF9;
+			font-size: 13px;
+		}
+		#header {
+			padding-bottom:1em;
+			padding-top:1em;
+		}
+		#header h1 {
+			font-size: 30px;
+			display: inline;
+			color: #3d5d6a;
+			padding-bottom: 40px;
+			padding-left: 90px;
+			padding-top: 70px;
+			background: url(icons/icon48.png) no-repeat 1px 62px;
+		}
+		h4 {
+			padding-left: 0.5em;
+			border-bottom: 2px dotted #c3c3c3;
+			color: #333333;
+			line-height: 28px;
+			font-size: 15px;
+		}
+		p {
+			padding-left: 2em;
+			font-family: verdana, arial, sans-serif, simsun;
+			font-size: 14px;
+		}
+		.contentBox {
+			background-color: #ffffff;
+			border: 3px solid #bec9ce;
+			border-radius: 20px 20px;
+			padding: 30px;
+			text-align: left;
+			margin: 50px auto 20px auto;
+			height: auto;
+			width: 600px;
+		}
+		.section-content {
+			padding-left: 80px;
+			line-height: 25px;
+		}
+		#colorpad a {
+			margin: 2px;
+			padding: 1px;
+			display: block;
+			height: 20px;
+			width: 20px;
+			float: left;
+			border: 1px solid #333333;
+		}
+		.clear {
+			clear: both;
+		}
+		.section-content {
+			padding-left: 55px;
+		}
+		.closeBtn {
+			margin: 20px 0 0 0;
+		}
+		#footer {
+			text-align: center;
+			font-size: 13px;
+		}
+	</style>
+</head>
+<body>
+<div class="contentBox">
+	<div id="header">
+		<h1 id="optionTitle">FromDocToPDF</h1>
+	</div>
+	<div id="tabTakeOverSettingDiv" style="margin: 0px 0px 5px 0px">
+		<h4 id="tabTakeOverSetting"> General Settings:</h4>
+		<div style="margin: 2px 0px 0px 56px">
+			<input type="checkbox" id="tabTakeOverCheckBox">
+			<span id="tabTakeOverCheckBoxText">Disable search box in new tabs</span>
+		</div></div>
+	<div class="closeBtn"><button id="saveAndClose"> Save & Close</button>
+	</div></div>
+</div>
+<div id="footer">&copy;2011 FromDocToPDF</div>
+<script src="js/options.js"></script>
+</body>
+</html>

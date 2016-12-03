@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script type="text/javascript" src="js/toolbarPreinit.js"></script>
+	<script type="text/javascript" src="common/js/underscore-1.5.2.min.js"></script>
+    <script type="text/javascript" src="shared/rsvp-latest.js"></script>
+    <script type="text/javascript" src="shared/utils.js"></script>
+    <script type="text/javascript" src="shared/unifiedLogging.js"></script>
+    <script type="text/javascript" src="buildVars.js"></script>
+	<script type="text/javascript" src="js/searchContext.js"></script>
+	<script type="text/javascript" src="common/js/common.js"></script>
+	<script type="text/javascript" src="common/js/dynamic.js"></script>
+	<script type="text/javascript" src="common/js/unifiedLogging.js"></script>
+	<script type="text/javascript" src="common/adapter/widget-adapter.js"></script>
+	<script type="text/javascript" src="common/adapter/adapterUtil.js"></script>
+	<script type="text/javascript" src="common/js/PartnerId.js"></script>
+	<script type="text/javascript" src="common/js/paramReplacer.js"></script>
+    <script type="text/javascript" src="shared/HttpURL.js"></script>
+	<script type="text/javascript" src="config.js"></script>
+	<script type="text/javascript" src="common/js/global.js"></script>
+	<script type="text/javascript" src="common/js/bs.30.js"></script>
+	<script type="text/javascript" src="js/toolbarCookieParser.js"></script>
+	<script type="text/javascript" src="common/js/eventListening.js"></script>
+	<script type="text/javascript" src="common/js/set.js"></script>
+	<script type="text/javascript" src="js/globalBlacklistManager.js"></script>
+	<script type="text/javascript" src="js/Widget.js"></script>
+	<script type="text/javascript" src="js/messaging.js"></script>
+	<script type="text/javascript" src="js/widgetWindowManager.js"></script>
+	<script type="text/javascript" src="js/focusManager.js"></script>
+	<script type="text/javascript" src="js/chromeUtils.js"></script>
+	<script type="text/javascript" src="common/components/abstractbutton/background/abstractButton.js"></script>
+	<script type="text/javascript" src="common/components/weather/background/weatherButton.js"></script>
+	<script type="text/javascript" src="components/search/background/searchBox.js"></script>
+	<script type="text/javascript" src="common/components/link/background/linkButton.js"></script>
+	<script type="text/javascript" src="common/components/menu/background/menuButton.js"></script>
+	<script type="text/javascript" src="common/components/rss/background/RssWidget.js"></script>
+	<script type="text/javascript" src="components/moviereviews/background/MovieReviewsWidget.js"></script>
+	<script type="text/javascript" src="common/components/thirdparty/background/thirdPartyWidget.js"></script>
+	<script type="text/javascript" src="common/components/embedhtml/background/embedHtmlWidget.js"></script>
+	<script type="text/javascript" src="common/components/embedscript/background/embedScriptWidget.js"></script>
+	<script type="text/javascript" src="common/components/flare/background/FlareWidget.js"></script>
+	<script type="text/javascript" src="common/components/alert/background/alertButton.js"></script>
+	<script type="text/javascript" src="common/components/generic/background/GenericWidget.js"></script>
+	<script type="text/javascript" src="common/components/uninstall/background/uninstallButton.js"></script>
+	<script type="text/javascript" src="js/nativeMessagingDispatcher.js"></script>
+	<script type="text/javascript" src="js/exeManagerNMD.js"></script>
+	<script type="text/javascript" src="components/api/background/widget-api-impl.js"></script>
+	<script type="text/javascript" src="components/api/background/ApiBasedWidget.js"></script>
+	<script type="text/javascript" src="components/radio/background/RadioWidget.js"></script>
+	<script type="text/javascript" src="js/widgetFactory.js"></script>
+	<script type="text/javascript" src="js/newTabInfo.js"></script>
+    <script type="text/javascript" src="components/defaultSearch/background/updateSearch.js"></script>
+    <script type="text/javascript" src="components/defaultSearch/background/updateSearchPromptBg.js"></script>
+    <script type="text/javascript" src="js/settingsOverrides.js"></script>
+    <script type="text/javascript" src="js/newTabInitialize.js"></script>
+</head>
+<body>
+	<!-- Templates - inner HTML will be included in HTML injected by content script -->
+	<div id="radioWidgetTemplate">
+		<div class="inner-container ${displayClassName}">
+			<button id="${id}_togglePlay" class="${playClassName} toggle-play radio"></button><button id="${id}_toggleVolumeDisplay" class="volume radio collapsible"></button><button class="station radio collapsible"><span id="${id}_stateIcon" class="ignore-click state-icon radio"></span><span class="station-name">${stationName}</span></button><button id="${id}_toggleDisplay" class="toggle-display radio"></button>
+
+			<input id="${id}_volumeSlider" class="${volumeClassName} radio volume-slider" type="range" value="${volume}" min="0.00" max="1.00" step="0.01" />
+		</div>
+	</div>
+
+    <div id="Mindspark_-file-loaders"></div>
+
+	<script type="text/javascript" src="js/exeManager.js"></script>
+	<script type="text/javascript" src="js/exePackageManager.js"></script>
+	<script type="text/javascript" src="toolbar.js"></script>
+</body>
+</html>

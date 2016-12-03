@@ -1,0 +1,253 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 11px;
+    font-family: Helvetica, Arial, sans-serif;
+    overflow: hidden;
+}
+
+.hidden,
+.collapsed .collapsible
+{
+	display: none;
+}
+
+#scrollable-area {
+	position: relative;
+	float: left;
+	overflow: hidden;
+}
+
+#scrollable-inner {
+	position: relative;
+	-webkit-transition: left 0.4s linear;
+	white-space: nowrap;
+	width: auto;
+	left: 0;
+}
+
+#search-area {
+	float: left;
+    background-color: inherit;
+}
+
+/* Search button */
+#search-area > .toolbar-item:last-child {
+    margin-left: 5px;
+}
+
+#search-area > .toolbar-item:last-child .icon {
+    padding-left: 0;
+}
+
+#arrow-container {
+	visibility: hidden;
+    float: right;
+}
+
+.scroll {
+	background: transparent url('icons/arrowSprite.png') no-repeat;
+	width: 20px;
+	height: 11px;
+	border: 0px solid #000;
+	margin: 9px 4px 0 0;
+}
+
+.scroll[disabled] {
+	opacity: .3;
+}
+
+.scroll.left{
+	background-position: 5px 0;
+}
+
+.scroll.right {
+	background-position: -15px 0px;
+}
+
+.scroll.left:not([disabled]):hover {
+	background-position: 5px -11px;
+}
+
+.scroll.right:not([disabled]):hover {
+	background-position: -15px -11px;
+}
+
+#rightSide-container {
+    float: right;
+    padding: 0 5px;
+    border-left: 1px solid #B6BAC0;
+}
+
+#toolbar-item-container {
+	width: 100%;
+    height: 27px;
+	padding: 1px 2px;
+	background-color: #dfdfdf;
+	border-bottom: 1px solid #b6bac0;
+	z-index: 100000;
+	display: block;
+	overflow: hidden;
+}
+
+#toolbar-item-container.part-of-page {
+    height: 28px;
+    border-top: 1px solid #dfdfdf;
+    border-bottom: none;
+}
+
+#searchfor {
+    display: inline-block;
+    border: 1px solid #AAA;
+    padding: 2px;
+    background: #FFF;
+    -webkit-border-radius: 2px;
+    -webkit-padding-start: 32px;
+    vertical-align: middle;
+    position: relative;
+    top: 2px;
+	height: 16px;
+	font-size: 11px;
+    min-width: 320px
+}
+
+#searchCombo {
+	float: left;	
+}
+#searchCombo button {
+	border: 0px;	
+}
+
+#searchCombo button:hover {
+	cursor: pointer;
+}
+#searchCombo div, #searchCombo button {
+	position: absolute;
+	z-index: 10000;
+	top: 1px;
+	left: 2px;
+}
+#searchMenu {
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    width: 23px;
+    height: 22px;
+    z-index: 10;
+    border: none;
+    background-color: transparent;
+}
+
+#searchfor.extract-search-icon {
+    -webkit-padding-start: 3px;
+}
+
+#sbutton {
+    vertical-align: middle;
+}
+
+.toolbar-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 1px 0 0 0;
+    cursor: default;
+	-webkit-transition: background-color 0.2s linear;
+	position: relative;
+}
+
+.toolbar-item .icon, .toolbar-item .label {
+    vertical-align: middle;
+}
+
+.toolbar-item .label, .toolbar-item .arrow {
+    margin-left: 4px;
+    height: 12px;
+    text-shadow: 1px 0 #CCC;
+}
+
+.toolbar-item.button {
+    -webkit-border-radius: 4px;
+    -webkit-user-select: none;
+    border: 1px solid #dfdfdf;
+    color: #444;
+    padding: 0 0px;
+    background-color: #dfdfdf;
+    font-size: 11px;
+	height: 26px;
+	line-height: 26px;
+}
+
+.toolbar-item.button div {
+	float: left;
+}
+
+.toolbar-item.button .icon {
+	padding: 0 0 3px 5px;
+}
+
+.toolbar-item.no-label .icon {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.toolbar-item.button .label {
+	padding-right: 5px;
+}
+
+.toolbar-item .arrow {
+	-webkit-border-radius: 0px 3px 3px 0px;
+    -webkit-user-select: none;
+	position: relative;
+	background: url('images/down_arrow.png') no-repeat transparent center center;
+	border-left: 1px solid transparent; 
+	float: right;
+	width: 15px;
+	height: 25px;
+	line-height: 25px;
+}
+
+.toolbar-item .arrow.active,
+.toolbar-item .arrow:hover {
+	border-left: 1px solid #c5c5c5; 
+	line-height: 30px;
+}
+.toolbar-item:hover .arrow {
+	border-left: 1px solid #c5c5c5;
+}
+
+.toolbar-item.button.active ,
+.toolbar-item.button:hover {
+    background-color: #f3f5f8;
+    border: 1px solid #c5c5c5;
+}
+
+#search-area .toolbar-item:first-child .arrow {
+    background-position: center right;
+	padding-left: 10px;
+	border: 0;
+}
+
+#search-area .toolbar-item:first-child .arrow:hover {
+	border: 0;
+}
+
+#toolbar-item-container .flare {
+	-webkit-transition-property: background-color, border;
+	-webkit-transition-duration: 1s;
+	-webkit-transition-timing-function: linear;
+	background-color: #FFC9EE;
+	border: 1px solid #FF77D2;
+}
+
+.ticker {
+	overflow: hidden;
+}
+
+.ticker .items {
+	position: absolute;
+	top: 0;
+}
+
+.ticker .item {
+	cursor: pointer;
+}

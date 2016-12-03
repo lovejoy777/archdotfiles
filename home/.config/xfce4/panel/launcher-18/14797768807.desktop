@@ -1,0 +1,11 @@
+[Desktop Entry]
+Comment=An easy to use screencast creator
+Exec=vokoscreen
+Icon=vokoscreen
+Name=vokoscreen
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=AudioVideo;Recorder;Qt;
+Keywords=Audio;Video;Recorder;Screencast;
+X-XFCE-Source=file:///usr/share/applications/vokoscreen.desktop
